@@ -1,0 +1,75 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+
+
+\begin{document}
+
+\begin{center}
+    \huge{Thinking of Commutative Algebra with Geometry.}
+\end{center}
+
+
+By the ways commutative algebra is (usually) tought, one quickly arrives at the
+assumption that commutative algebra is a completely dry, tedious subject, relying
+heavily on complicated computations without deeper meaning. The aim of this short
+text is to show that this assumption is \textbf{wrong} (or at least not completely
+correct haha). As hinted on in the first exercise session, I want to explain
+how to convert complicated results in algebra into easy (or at least easier) to 
+remember geometric pictures. 
+
+\section{An Example.}
+The central objects in commutative algebra are polynomial rings over fields $A =
+k[x_1, \dots, x_n]$. By pluggin in coordinates, we turn these into geometric
+objects by considering the elements of $A$ as
+functions $k^n \to k$. Given some element $f \in A$, we want to study the vanishing
+set 
+\begin{equation*}
+    V(f) \coloneqq \{(x_1, \dots x_n) \in k^n \mid f(x_1, \dots, x_n) = 0\}.
+\end{equation*}
+More generally, given some ideal $I \subset A$, we define 
+\begin{equation*}
+    V(I) = \{(x_1, \dots x_n) \in k^n \mid \forall f \in I : f(x_1, \dots, x_n) = 0 \}.
+\end{equation*}
+This definition defines a map
+\begin{equation*}
+    V: \{\text{Ideals $I$ in $A$}\} \to \{\text{algebraic subsets }S \subset k^n\}
+\end{equation*}
+where we say that a set is \textit{algebraic} if it lies in the image of $V$. 
+Note that this operation is inclusion-reversing: If we have Ideals $I \subset J$, 
+we have $V(J) \subset V(I)$ (almost) by definition. This opens the door to 
+geometry-land, as we come from elements in (an abstract) ring, and obtain 
+subsets of $k^n$, which we can think of as geometric objects. Instead 
+of thinking of ideals of $A$, we want to think of their vanishing loci. 
+Of course this comes with some losses (different ideals can have the same vanishing
+locus),\footnote{Hilbert's Nullstellensatz fully describes how much information
+we lose} and we will have to do some work to understand the operator $V$,
+and even more work to extend this idea to the case where $A$ is not of the form
+given above. But first, we want to have a look how this gives completely new
+perspective on weird results.
+
+\section{Converting a result into a picture}
+During the very first exercise session, we encountered the following statement.
+\begin{lema}
+    Let $A$ be a commutative ring and $I \subset A$ be an ideal. There is a
+    bijection 
+    $$\{\text{Ideals $\bar J \subset A/I$}\} \leftrightarrow \{\text{Ideals 
+    $J \subset A$ such that $I \subset J$ }\},$$
+    given by $\bar J \mapsto J + I$ (from left to right) and $J \mapsto J/I$ (from 
+    right to left).
+\end{lema}
+The proof is completely formal and not very interesting. If one thinks of algebra
+as a hotchpotch of calculations, the statement too might seem quite random. But 
+let us assume (with a bit of unnecessary loss of generality) that $A = \R[x,y]$
+and $I = (f)$, where $f = x^2 + y^2 -1$. Now $V(I) = V(f) = S^1$ (the circle).
+If we are given an Ideal $J \subset A$ with $I \subset J$, we find that 
+$V(J)$ is an algebraic subset of $S^1$. Hence, we want to think of the right hand
+side as algebraic subsets of $S^1$. 
+Unfortunately, given some class $[f] \in A/I$, the mapping $[f] \mapsto V(f)$ is 
+not well-defined, for example $V(0) \neq V(f)$ but $[0] = [f]$. However, it is
+well-defined once we intersect the image with $V(I)$. Indeed, two different 
+representatives differ by functions that vanish on $V(I)$. This yields a new
+map
+
+
+\end{document}
