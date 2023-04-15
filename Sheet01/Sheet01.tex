@@ -1,0 +1,97 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+
+\begin{document}
+
+\begin{center}
+    \huge{Solutions to Sheet 2}
+\end{center}
+
+\exercise{1}
+Determine the nilradical, the Jacobson radical and the units for each
+ring $A$ below:
+\begin{enumerate}
+    \item $k$ a field and $A = k[T]$,
+    \item $k$ a field and $A = k[\epsilon, T]/(\epsilon^2)$,
+    \item $n \geq 1$, $k$ a field and $A = k \llbracket T_1, \dots, T_n \rrbracket$. 
+\end{enumerate}
+\textbf{Solution.}
+\begin{enumerate}
+    \item \textit{Nilradical.} If $B$ is any commutative ring without
+        zero divisors, then $B[T]$ doesn't have zero divisors. Indeed,
+        if $f, g \in B[T]$ with $fg = 0$, we can look at the leading terms
+        of $f$ and $g$, obtaining $f = 0$ or $g = 0$. We now obtain $\Nil(A) = (0)$
+        as every element in the nilradical is a zero divisor. \\
+        \textit{Units.} Obviously, $k^\times \subset k[T]^\times$.
+        We have the additive degree map $\deg: k[T]^\times \to \N_0$. If
+        we have elements $f,g \in k[T]$ with $fg = 1$,
+        then $0 = \deg (fg) = \deg(f) + \deg(g)$, thereby $\deg(f) = \deg(g) = 0$
+        and $f,g \in k^\times$. This shows that $k^\times \supset k[T]^\times$,
+        and we have equality. \\
+        \textit{Jacobson radical.} Note that if $B$ is any commutative 
+        ring and $f \in \Jac(B)$, then $1 + f \in B^\times$. Indeed, if we had
+        $1 + f \not \in B^\times$, we'd find some maximal ideal $\fm$ containing
+        $1 + f$ (by Zorn's lemma). But now $f \in \fm$ (as $f \in \Jac(B)$)
+        and $1 + f \in \fm$, hence $1 \in \fm$. This is a contradiction. 
+        Thereby we obtain
+        that every $f \in \Jac(A)$ has degree $0$. As $A^\times \cap \Jac(A) =
+        \emptyset$, we find $\Jac(A) = 0$. As $\Jac(A) \supset \Nil(A)$, this
+        is stronger than $\Nil(A) = 0$. 
+    \item \textit{Nilradical.} We claim that if $I \subset \Nil(A)$, there is
+        an equality $\Nil(A)/I = \Nil(A/I)$. Indeed, we have 
+        Indeed, this can be seen Same works with Jacobson.
+    \item For $A$ is inverse limit (i.e., can be described by comp systems). Hence Units are power series whose first term is invertible. 
+        For units: Claim: If $I \subset \Nil(B)$ then $B^\times = \pi^{-1} ((B/I)^\times)$. Take $I = (T_1, \dots, T_n)$. 
+\end{enumerate}
+    
+\exercise{2}
+Prove the \textit{Chinese remainder theorem}: Let $A$ be a ring and $\fa, \fb
+\subset A$ two ideals such that $\fa + \fb = A$. Then the map 
+\begin{equation*}
+    A/ \fa \cap \fb \to A/ \fa \times A/\fb, \quad 
+    r + \fa \cap \fb \mapsto (r + \fa, r + \fb)
+\end{equation*}
+is an isomorphism. Moreover, show that $\fa \cap \fb = \fa \cdot \fb$, where
+$\fa \cdot \fb$ is the smalles ideal in $A$ containing all products $ab$ 
+wth $a \in A$, $b \in B$. 
+Show $a \cap b = ab$. Show that map has kernel $a \cap b$ and that homomorphism is surjective. 
+
+\textbf{Solution.} We first show that this map is well-defined, and indeed a 
+homomorphism of rings. This is evident for the reduction-mod-$\fa$ and 
+reduction-mod-$\fb$ maps $A \to A/\fa$ and $A/\fb$. By the universal property of 
+the product of rings we obtain the map $A \to A/\fa \times A/\fb$. The kernel
+of this homomorphism is given by the elements in $A$ which lie simultaneously in 
+$\fa$ and $\fb$, hence we obtain an injective map 
+\begin{equation*}
+    A/(\fa \cap \fb) \to A/\fa \times A/\fb.
+\end{equation*}
+To show surjectivity, it suffices to construct elements $a, b \in A$ such that 
+$a \mapsto (0,1)$ and $a \mapsto (1,0)$. As $\fa + \fb = A$, there are elements
+$a \in \fa$ and $b \in \fb$ such that $a + b = 1$. These are the elements we 
+are looking for! Indeed, as $a = 1 - b$ we find that $a$ reduces to $1$ mod $\fb$,
+and as $a \in \fa$ we find $(a + \fa, a + \fb) = (\fa, 1 + \fb)$. 
+
+We now show that $\fa \cap \fb = \fa \cdot \fb$. The inclusion 
+$\fa \cap \fb \supset \fa \cdot \fb$ is obvious, as all products $ab$ lie in both
+$\fa$ and $\fb$. To show the reverse inclusion, let $f \in \fa \cap \fb$. Again,
+let $a + b = 1$ with $a \in \fa$ and $b \in \fb$. Then $fa + fb = f$, and the 
+left hand side lies in $\fa \cdot \fb$ by definition. 
+
+
+\exercise{3}
+\begin{enumerate}
+    \item okay. How to make sense of "decompositions": $\{(A_1, A_2, \alpha: A \cong A_1 \times A_2)\}$.  Weddeburn's theorem.
+    \item $133 = 7 \cdot 19$. We have $1 = 3 \times 19 - 8\cdot 7$. Hence the idempotents are $(57, 77, 0,1)$.
+\end{enumerate} 
+
+\exercise{4}
+\begin{enumerate}
+    \item Integral domain => mult by $x \in A\setminus\{0\}$ injective => Mult surjective => Field
+    \item Apply 1) to $A/\fp$. 
+    \item Use $0 = \Nil(A) = \cap_i \fm_i$. Generalize CRT to get $A/\bigcap_i \fm_i \cong \prod_i A/\fm_i$. 
+        By $A$ finite dimensional, there are only finitely many factors. 
+\end{enumerate}
+
+
+\end{document}
