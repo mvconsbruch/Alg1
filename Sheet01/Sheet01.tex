@@ -46,14 +46,13 @@ ring $A$ below:
         prime ideals. The same statement is true for the Jacobson radical. 
 
         We apply this statement with $I = (\varepsilon)$. As $\varepsilon^2 = 0$, 
-        we have $I \subset \fm$ for every maximal ideal, hence $(\varepsilon)
+        we have $I \subset \fp$ for every prime ideal, hence $(\varepsilon)
         \subset \Jac(A)$. As $A/(\varepsilon) \cong k[T]$, we have 
         $(0) = \Nil(A/(\varepsilon)) = \Nil(A) / (\varepsilon)$. This shows 
-        $\Nil(A) \subset (\varepsilon)$, and we obtain 
-        \begin{equation*}
-            (\varepsilon) \subset \Jac(A) \subset \Nil(A) \subset (\varepsilon).
-        \end{equation*}
-        Done.  
+        $\Nil(A) = (\varepsilon)$. 
+
+        The same proof, but with $\Jac$ in place of $\Nil$, (and maximal ideals instead of
+        prime ideals) shows that $\Jac(A) = (\varepsilon)$.
 
         \textit{Units.} There are probably smarter ways to do this, but let's try
         brute force. Suppose we have $f = f_1 + \varepsilon f_2$ and 
