@@ -1,0 +1,54 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+
+\begin{document}
+
+\begin{center}
+    \huge{Solutions to Sheet 2}
+\end{center}
+
+\exercise{1}
+Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$. 
+\begin{enumerate}
+    \item Show that $\zeta$ is a primitive third root of unity.
+    \item Show that the norm (for the field extension $\Q(\zeta)/\Q$ of
+        an element $x + y\zeta \in \Q(\zeta)$, where $x,y \in \Q$, is given by
+        $x^2 - xy + y^2$, and that this is non-negative for all $x,y \in \Q$. 
+    \item  Following the discussion of $\Z[i]$ from the lecture, show that a prime
+        $p \neq 3$ is of the form $p = x^2 - xy + y^2$ for some $x,y \in \Z$ if
+        and only if $p \equiv 1$ (mod $3$). 
+\end{enumerate}
+
+\exercise{2}
+\begin{enumerate}
+    \item Let $A$ be a principal ideal domain that is not a field, and let $\fm
+        \subset A$ be a maximal ideal. Prove that $\fm^n/\fm^{n+1}$ is a
+        one-dimensional vector space over $A/\fm$ for any $n \geq 0$. 
+    \item Let $A = \C[x,y]$ and $\fm = (x,y)$. Compute $\dim_{A/\fm} (\fm^n
+        /\fm^{n+1})$ for $n \geq 0$. Deduce that $A$ is not a principal ideal
+        domain. 
+    \item Let $A = \Z[\sqrt{-3}]$. Show that $A$ has a unique maximal ideal $\fm$
+        with $\fm \cap \Z = (2)$. Compute $\dim_{A/\fm} \fm/\fm^2$. Deduce that 
+        $A$ is not a principal ideal domain.
+\end{enumerate}
+
+\exercise{3}
+Let $A$ be a unique factorization domain. 
+\begin{enumerate}
+    \item Show that for any prime element $\pi \in A$, the ideal $\fp = (\pi)$ is 
+        prime and only contains the prime ideals $\{0\}$ and $\fp$.
+    \item Conversely, let $0 \neq \fp \subset A$ be a prime ideal such that $\{0\}$
+        and $\fp$ are the only prime ideals of $A$ that are contained in $\fp$. 
+        Show that $\fp = (\pi)$ for some prime element $\pi \in A$. 
+    \item Assume that each non-zero prime ideal $\fp \subset A$ satisfies the
+        assumption in 2). Show that $A$ is a principal ideal domain. 
+\end{enumerate}
+
+\exercise{4}
+\begin{enumerate}
+    \item Let $A$ be any ring. Show that $A$ contains minimal prime ideals. 
+    \item Determine the minimal prime ideals of $\Z[x,y]/(xy)$. 
+\end{enumerate}
+\contactend
+\end{document}
