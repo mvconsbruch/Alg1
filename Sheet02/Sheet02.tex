@@ -20,6 +20,29 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
         and only if $p \equiv 1$ (mod $3$). 
 \end{enumerate}
 
+\textbf{Solution.}
+\begin{enumerate}
+    \item We have 
+        $$\zeta^3 = \left(\frac 12 (-1 + \sqrt{-3})\right)^3 = 1/8(-1 +
+        3\sqrt{-3} - 9 + 3 \sqrt{-3}) = 1.$$ 
+        As $\zeta \neq 1$ (and $3$ has no non-trivial
+        divisors), it is a primitive (third) root. 
+    \item The norm is defined as the product of all galois-conjugates. The minimal
+        polynomial of $\zeta$ is given by $f(x) = x^2 + x + 1 = (x - \zeta)(x -
+        \bar \zeta)$, so the only non-trivial element in the Galois-group
+        $\Gal(\Q(\zeta)/\Q)$ is given by the action defined via 
+        $\zeta \mapsto \bar \zeta$, which is the same as complex conjugation. 
+        We find 
+        $$\Norm(x+\zeta y) = (x+\zeta y)(x + \bar \zeta y) = x^2 + (\zeta +
+        \bar \zeta)xy + \zeta \bar \zeta y^2.$$
+        The claim follows as $\zeta \bar \zeta$ and $\zeta + \bar \zeta$
+        are given by the constant and the negative of the second-to-highest
+        coefficient of the minimal polynomial of $\zeta$ (which are both given by
+        $1$).
+
+
+\end{enumerate}
+
 \exercise{2}
 \begin{enumerate}
     \item Let $A$ be a principal ideal domain that is not a field, and let $\fm
@@ -31,6 +54,19 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
     \item Let $A = \Z[\sqrt{-3}]$. Show that $A$ has a unique maximal ideal $\fm$
         with $\fm \cap \Z = (2)$. Compute $\dim_{A/\fm} \fm/\fm^2$. Deduce that 
         $A$ is not a principal ideal domain.
+\end{enumerate}
+
+\textbf{Solution.}
+\begin{enumerate}
+    \item Let $\pi \in A$ such that $(\pi) = \fm$. We have the map (of $A$-modules)
+        $$\phi: A \to \fm^n/\fm^{n+1}, \quad a \mapsto a \pi^n$$. 
+        It is obviously surjective, and one quickly verifies that the kernel is
+        given by $(\pi)$. Hence we find $A/\fm \cong \fm^n/\fm^{n+1}$, and we
+        are done. 
+    \item We have $\fm^n = (x^n, x^{n-1}y, \dots, xy^{n-1},y^n)$. These generators
+        form a basis for $\fm^{n}/\fm^{n+1}$ (they are generating and linearly
+        independent over $\C$), hence the dimension is $n+1$. This contradicts
+        what we showd for principal ideal domains once $n \geq 1$. 
 \end{enumerate}
 
 \exercise{3}
