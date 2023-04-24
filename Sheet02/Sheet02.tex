@@ -54,13 +54,13 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
         of the form $x^2 -xy + y^2$ have residue $1$ mod $3$. 
 
         To show the converse implication, let $p \in \Z$ be any prime. 
-        By a statement from Lecture 2, the prime elements $\pi \in \Z[\zeta]$
+        As $\Z[\zeta]$ is a PID, the prime elements $\pi \in \Z[\zeta]$
         that divide $p$ are in bijection with the maximal (equivalently,
         non-zero prime) ideals $\fm \subset \Z[\zeta]$ such that $\fm \cap \Z =
-        (p)$. An easy computation shows that these ideals are in bijection
-        with the irreducible monic factors of $T^2 + T + 1$ in 
-        $\FF_p[T]$. As $\FF_p[T]$ has a non-trivial third root of unity if
-        and only if $3 \mid p-1$, we find that there are 
+        (p)$. An easy computation shows (lecture 3) that these ideals are in
+        bijection with the irreducible monic factors of $T^2 + T + 1$ in
+        $\FF_p[T]$. As $\FF_p[T]$ has a non-trivial third root of unity if and
+        only if $3 \mid p-1$, we find that there are 
         two prime ideals "above" $(p)$ if $3 \mid p-1$.
 
         Hence, let $\pi_1, \pi_2$ be the two prime elements of 
@@ -144,9 +144,12 @@ Let $A$ be a unique factorization domain.
         We claim that $I = (\pi_1^{e_1} \cdots \pi_n^{e_n})$. We write $(f)$
         for the right hand side. The inclusion "$I \subset (f)$" is trivial. 
 
-        To show the other direction, it suffices to show that $f \in I$. By 
-        construction, there is some $g_i \in I$ such that $\pi_i^{e_i + 1}
-        \nmid g_i$. 
+        To show the other direction, it suffices to show that $f \in I$. 
+        Suppose that $I = (g_i \mid i \in I)$. Write $g_i = h_i f$ and inspect
+        the ideal $I' = (h_i \mid i \in I)$. By construction there is no 
+        prime $\pi \in A$ such that $I' \subset (\pi)$, otherwise the
+        factors $e_i$ would not have been chosen maximal. But this shows that 
+        $I' = (1)$, i.e., $f \in I$. 
 
 
 \end{enumerate}
