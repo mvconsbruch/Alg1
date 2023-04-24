@@ -35,10 +35,14 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
         We find 
         $$\Norm(x+\zeta y) = (x+\zeta y)(x + \bar \zeta y) = x^2 + (\zeta +
         \bar \zeta)xy + \zeta \bar \zeta y^2.$$
-        The claim follows as $\zeta \bar \zeta$ and $\zeta + \bar \zeta$
-        are given by the constant and the negative of the second-to-highest
-        coefficient of the minimal polynomial of $\zeta$ (which are both given by
-        $1$).
+        The claim follows as $\zeta + \bar \zeta = -1$ and $\zeta \bar \zeta = 1$. 
+
+        It remains to show that the norm is always positive. The claim is 
+        trivial if $x,y$ have different sign. If the sign is the same, we may
+        wlog assume that both are positive. In that case, this is a special case
+        of the AM-GM inequality. But for completeness, here is a calculation:
+        $$ x^2 -xy +y^2 \geq x^2 - 2xy + y^2 = (x-y)^2 \geq 0$$
+
     \item We want to show that there is an element $z = x + \zeta y \in \Z(\zeta)$ 
         with $\Norm(z) = p$ if and only if $3 \mid p-1$. We know from the lecture
         that $\Z[\zeta]$ is a principal ideal domain. 
@@ -88,7 +92,7 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
 \textbf{Solution.}
 \begin{enumerate}
     \item Let $\pi \in A$ such that $(\pi) = \fm$. We have the map (of $A$-modules)
-        $$\phi: A \to \fm^n/\fm^{n+1}, \quad a \mapsto a \pi^n$$. 
+        $$\phi: A \to \fm^n/\fm^{n+1}, \quad a \mapsto a \pi^n.$$
         It is obviously surjective, and one quickly verifies that the kernel is
         given by $(\pi)$. Hence we find $A/\fm \cong \fm^n/\fm^{n+1}$, and we
         are done. 
@@ -141,15 +145,15 @@ Let $A$ be a unique factorization domain.
         finite set of primes such that $I \subset (\pi_i)$ (this is a finite set
         because any $f \in I$ has only a finite number of divisors), and let
         $e_i$ be the maximal integer such that $I \subset (\pi_i^{e_i})$ holds.
-        We claim that $I = (\pi_1^{e_1} \cdots \pi_n^{e_n})$. We write $(f)$
-        for the right hand side. The inclusion "$I \subset (f)$" is trivial. 
+        Write $\alpha = \pi_1^{e_1} \dots \pi_n^{e_n}$. We claim that $I =
+        (\alpha)$. The inclusion "$I \subset (\alpha)$" is trivial. 
 
-        To show the other direction, it suffices to show that $f \in I$. 
-        Suppose that $I = (g_i \mid i \in I)$. Write $g_i = h_i f$ and inspect
+        To show the other direction, it suffices to show that $\alpha \in I$. 
+        Suppose that $I = (g_i \mid i \in I)$. Write $g_i = h_i \alpha$ and inspect
         the ideal $I' = (h_i \mid i \in I)$. By construction there is no 
         prime $\pi \in A$ such that $I' \subset (\pi)$, otherwise the
         factors $e_i$ would not have been chosen maximal. But this shows that 
-        $I' = (1)$, i.e., $f \in I$. 
+        $I' = (1)$, i.e., $\alpha \in I$. 
 
 
 \end{enumerate}
@@ -168,7 +172,7 @@ Let $A$ be a unique factorization domain.
         ordered by inclusion. To apply Zorn's lemma, let $\fp_1 \supset \fp_2
         \supset \dots$ be a decreasing chain of prime ideals. We need to show
         that this chain has a minimal element, which is a prime ideal 
-        $\fp$ such that $\fp_i \supset \fp$. We set $\fp = \bigcup_{i \in \N}
+        $\fp$ such that $\fp_i \supset \fp$. We set $\fp = \bigcap_{i \in \N}
         \fp_i$, and we have to show that this is a prime ideal. This is
         straight-forward. Assume that $ab \in \fp$. Assume $b \not \in \fp$.
         Then, there is some $i$ such that $b \not \in \fp_i$, and hence $b \not
@@ -177,8 +181,8 @@ Let $A$ be a unique factorization domain.
         we are done. 
     \item We use that minimal prime ideals of $\Z[x,y]/(xy)$ are exactly those
         prime ideals of $\Z[x,y]$ that are minimal among those containing
-        $(xy)$. As $\Z[x,y]$ is a UFD, the only prime ideals containing 
-        $(xy)$ are $(x)$ and $(y)$.
+        $(xy)$. Using that $\Z[x,y]$ is a UFD, we find that those prime ideals
+        are given by $(x)$ and $(y)$.
 \end{enumerate}
 
 \contactend
