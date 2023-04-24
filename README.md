@@ -5,6 +5,7 @@
 Warning: These are non-official, there might be errors. If you find errors, feel free to write me :)
 
 * [Sheet 1](Sheet01/Sheet01.pdf) Calculating Nilradicals, Jaobson radicals and Units of a few rings; The Chinese remainder theorem; Idempotents.
+* [Sheet 2](Sheet02/Sheet02.pdf) Algebraic rings of integers, PIDs, minimal primes
 
 
 ###### Max von Consbruch, email: s6mavonc(at)uni-bonn(dot)de
