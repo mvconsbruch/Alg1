@@ -67,6 +67,7 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
         form a basis for $\fm^{n}/\fm^{n+1}$ (they are generating and linearly
         independent over $\C$), hence the dimension is $n+1$. This contradicts
         what we showd for principal ideal domains once $n \geq 1$. 
+    \item 
 \end{enumerate}
 
 \exercise{3}
@@ -81,10 +82,62 @@ Let $A$ be a unique factorization domain.
         assumption in 2). Show that $A$ is a principal ideal domain. 
 \end{enumerate}
 
+\textbf{Solution.}
+\begin{enumerate}
+    \item Let $0 \neq \fq$ be a prime contained in $\fp$. Take some nonzero
+        element $q \in \fq$. Write $q = a \pi^n$, where $a \in A$ is an element
+        not divisible by $\pi$. Now, as $\fq$ is prime, either $\pi^n \in \fq$ or 
+        $a \in \fq$. But we have $a \not \in (\pi) \subset \fq$, hence
+        $\pi^n \in \fq$. Induction shows that $\pi \in \fq$, which results in
+        $\fq = \fp$. 
+
+    \item Suppose $\pi \in \fp$ is a prime element contained in $\fp$. Then
+        $(\pi) \subset \fp$, which by assumption shows $(\pi) = \fp$. 
+        We only need to show that there are prime ideals in any
+        nonzero element $\fp$. For that sake, let $a \in \fp$. There is a finite
+        decomposition $a = \prod_{i=1}^n p_i^{e_i}$, and we find 
+        that for some $i$, the prime element $p_i$ lies in $\fp$. 
+
+    \item Let $I \neq (0)$ be any ideal. Let $\pi_1, \dots, \pi_n$ be the
+        finite set of primes such that $I \subset (\pi_i)$ (this is a finite set
+        because any $f \in I$ has only a finite number of divisors), and let
+        $e_i$ be the maximal integer such that $I \subset (\pi_i^{e_i})$ holds.
+        We claim that $I = (\pi_1^{e_1} \cdots \pi_n^{e_n})$. We write $(f)$
+        for the right hand side. The inclusion "$I \subset (f)$" is trivial. 
+
+        To show the other direction, it suffices to show that $f \in I$. By 
+        construction, there is some $g_i \in I$ such that $\pi_i^{e_i + 1}
+        \nmid g_i$. 
+
+
+\end{enumerate}
+
 \exercise{4}
 \begin{enumerate}
     \item Let $A$ be any ring. Show that $A$ contains minimal prime ideals. 
     \item Determine the minimal prime ideals of $\Z[x,y]/(xy)$. 
 \end{enumerate}
+
+\textbf{Solution.}
+\begin{enumerate}
+    \item What does Zorn's Lemma say again? Ah. If in an ordered set we can
+        show that any totally ordered chain has a minimal element, then there
+        are minimal elements. As our ordered set we take the set of prime ideals,
+        ordered by inclusion. To apply Zorn's lemma, let $\fp_1 \supset \fp_2
+        \supset \dots$ be a decreasing chain of prime ideals. We need to show
+        that this chain has a minimal element, which is a prime ideal 
+        $\fp$ such that $\fp_i \supset \fp$. We set $\fp = \bigcup_{i \in \N}
+        \fp_i$, and we have to show that this is a prime ideal. This is
+        straight-forward. Assume that $ab \in \fp$. Assume $b \not \in \fp$.
+        Then, there is some $i$ such that $b \not \in \fp_i$, and hence $b \not
+        \in \fp_j$ for all $j \geq i$. But now, as all of the $\fp_i$ are
+        prime, we find that $a \in \fp_i$ for all $i$. Hence $a \in \fp$, and
+        we are done. 
+    \item We use that minimal prime ideals of $\Z[x,y]/(xy)$ are exactly those
+        prime ideals of $\Z[x,y]$ that are minimal among those containing
+        $(xy)$. As $\Z[x,y]$ is a UFD, the only prime ideals containing 
+        $(xy)$ are $(x)$ and $(y)$.
+\end{enumerate}
+
 \contactend
 \end{document}
