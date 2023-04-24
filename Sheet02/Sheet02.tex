@@ -39,7 +39,36 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
         are given by the constant and the negative of the second-to-highest
         coefficient of the minimal polynomial of $\zeta$ (which are both given by
         $1$).
+    \item We want to show that there is an element $z = x + \zeta y \in \Z(\zeta)$ 
+        with $\Norm(z) = p$ if and only if $3 \mid p-1$. We know from the lecture
+        that $\Z[\zeta]$ is a principal ideal domain. 
+        First note that the "only if" part is trivial. Indeed, we have
+        \begin{equation*}
+            x^2 -xy + y^2 \equiv \begin{cases}
+                1 \pmod 3, &\text{ if } (x,y) = (1,1), (0,1), (1,0)\\
+                0 \pmod 3, &\text{ if } (x,y) = (0,0).
+            \end{cases}
+        \end{equation*}
+        If $3 \mid x$ and $3 \mid y$ we find that $3 \mid \Norm(x+\zeta y)$,
+        hence $\Norm(x+\zeta y)$ cannot be a prime. This shows that all primes
+        of the form $x^2 -xy + y^2$ have residue $1$ mod $3$. 
 
+        To show the converse implication, let $p \in \Z$ be any prime. 
+        By a statement from Lecture 2, the prime elements $\pi \in \Z[\zeta]$
+        that divide $p$ are in bijection with the maximal (equivalently,
+        non-zero prime) ideals $\fm \subset \Z[\zeta]$ such that $\fm \cap \Z =
+        (p)$. An easy computation shows that these ideals are in bijection
+        with the irreducible monic factors of $T^2 + T + 1$ in 
+        $\FF_p[T]$. As $\FF_p[T]$ has a non-trivial third root of unity if
+        and only if $3 \mid p-1$, we find that there are 
+        two prime ideals "above" $(p)$ if $3 \mid p-1$.
+
+        Hence, let $\pi_1, \pi_2$ be the two prime elements of 
+        $\Z[\zeta]$ that divide $p$ and write $(p) = (\pi_1^{e_1})(\pi_2^{e_2})$. 
+        As in the lecture we find $\Norm(\pi_1) = \Norm(\pi_2) = p$, which 
+        implies $e_1 = e_2 = 1$. Now we have a primary decomposition 
+        $p = \pi_1 \pi_2$, which implies that $\pi_1 = \bar \pi_2$, which
+        gives the desired representation of $p$. 
 
 \end{enumerate}
 
@@ -67,7 +96,17 @@ Define $\zeta = \frac{-1 + \sqrt{-3}}2 \in \C$.
         form a basis for $\fm^{n}/\fm^{n+1}$ (they are generating and linearly
         independent over $\C$), hence the dimension is $n+1$. This contradicts
         what we showd for principal ideal domains once $n \geq 1$. 
-    \item 
+    \item We first show that there is a unique maximal ideal of $A$ with 
+        $\Z \cap \fm = (2)$. Indeed, those maximal ideals are in bijection with
+        the maximal ideals of $\FF_2[T]/(T^2 + 3)$. As $T^2 + 3$ factors in 
+        $\FF_2[T]$ as $(T+1)^2$, we find that $\fm = (2, \sqrt{-3} + 1)$ is the
+        unique maximal ideal of $\Z[\sqrt{-3}]$ above $(2)$. 
+
+        Now $\fm^2 = (4, 2 \sqrt{-3} + 2, -2 + 2\sqrt{-3})$. Hence the elements
+        $2$ and $\sqrt{-3}+1$ do not lie in $\fm^2$ as they have norm $4$ (after
+        choosing an embedding into $\C$), while all elements generating
+        $\fm^2$ have norm $16$. Hence there are at least $3$ elements in 
+        $\fm/\fm^2$, thereby $\dim_{\FF_2}{\fm/\fm^2} \neq 1$. 
 \end{enumerate}
 
 \exercise{3}
