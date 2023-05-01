@@ -6,6 +6,7 @@ Warning: These are non-official, there might be errors. If you find errors, feel
 
 * [Sheet 1](Sheet01/Sheet01.pdf) Calculating Nilradicals, Jaobson radicals and Units of a few rings; The Chinese remainder theorem; Idempotents.
 * [Sheet 2](Sheet02/Sheet02.pdf) Algebraic rings of integers, PIDs, minimal primes.
+* [Sheet 3](Sheet03/Sheet03.pdf) Prime ideals of polynomial rings of PIDs, fibers of some morphism, Krull dimension of polynomial rings, localization and saturation.
 
 
 ###### Max von Consbruch, email: s6mavonc(at)uni-bonn(dot)de
