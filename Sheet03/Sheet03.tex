@@ -1,0 +1,211 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+
+\begin{document}
+
+\begin{center}
+    \huge{Solutions to Sheet 3}
+\end{center}
+
+\exercise{1}
+Let $A$ be a PID. The arguments of $A = \Z$ from the lecture work 
+verbatim to show that the prime ideals of $A[T]$ are 
+\begin{enumerate}
+    \item $(0)$,
+    \item $(f)$, $f \in A[T]$ irreducible,
+    \item $(\pi, g)$ with $\pi \in A$ prime and $g \in A[T]$ a polynomial whose
+        image in $(A/\pi)[T]$ is irreducible.
+\end{enumerate}
+Show the following.
+\begin{enumerate}
+    \item Assume that $A$ has infinitely many prime ideals. Prove that the
+        heights of the primes in (i), (ii) and (iii) are given by 
+        $0,1,2$ respectively. Show that each maximal ideal of $A[T]$ has height $2$. 
+    \item Let $k$ be a field and set $A = k\llbracket u \rrbracket$. Show that 
+        $A[u^{-1}]$ is a field. Deduce that, in contrast to 1), the height $1$
+        ideal $(uT - 1)$ is maximal. 
+\end{enumerate}
+\textbf{Solution.}
+\begin{enumerate}
+    \item That $(0)$ is of height zero is obvious. We showed on the last sheet
+        that the only prime ideals contained in principal prime ideals 
+        $(f)$ of UFDs are $(0)$ and $(f)$. As polynomial rings over UFDs are 
+        UFDs again, we are done with this case. 
+
+        To solve the first part of the exercise, we show that every ideal of the
+        form $(f)$ is contained in some ideal of the form $(\pi, g)$, and that
+        there are no nontrivial inclusions of ideals that are of that form.
+
+        Assume we are given two prime ideals $ \fp = (\pi, g) \subset (\pi',
+        g') = \fp'$. By this inclusion we find $\fp \cap A = \fp' \cap A$, 
+        which shows $(\pi) = (\pi')$. But 
+        $A/(\pi)$ is a field, hence $A/(\pi)[T]$ is a PID and we find that 
+        the reductions of $g$ and $g'$ mod $\pi$ are the same. This shows 
+        $(\pi, g) = (\pi, g')$, and we are done. (We have not used yet that 
+        there are infinitely many prime ideals).
+
+        We also have to show that every maximal ideal is of the form $(\pi, g)$. 
+        To this end, we have to show that every ideal of the form $(f)$ is
+        contained in some ideal $(\pi, g)$. But if we write such $f$ 
+        as $f = a_d T^d + \dots + a_0$ and choose some prime $\pi \in A$ 
+        that does not divide $a_d$, we find that the reduction of $f$ mod $\pi$
+        is monic, at least up to multiplication with some unit. Hence we can 
+        choose some irreducible factor $g \in (A/\pi)[T]$ of $f$ and lift
+        it to a function $\tilde g \in A[T]$. We find that $(\pi, \tilde g)$ 
+        is prime and contains $(f)$, as desired. 
+        
+    \item We have $A[T]/(uT-1) = A[u^{-1}]$. Note that $A$ is a local ring and in
+        particular a principal ideal domain (but with only a single prime). 
+        We have seen on a prior sheet that every element $x \in A \setminus (u)$
+        is invertible, hence we done. 
+\end{enumerate}
+
+
+\exercise{2}
+Let $k$ be an algebraically closed field and let 
+\begin{equation*}
+    \phi: k[x,y] \to k[u,v], \quad x \mapsto u, \ y \mapsto uv.
+\end{equation*}
+\begin{enumerate}
+    \item Use exercise 1 to show that the maximal ideals of $k[x,y]$ are precisely
+        the ideals 
+        \begin{equation*}
+            \fm_{\lambda, \mu} \coloneqq (x-\lambda, y - \mu), \quad \lambda,
+            \mu \in k.
+        \end{equation*}
+    \item Show that $\phi$ induces an isomorphism $k[x,y][x^{-1}] \to
+        k[u,v][u^{-1}]$. 
+    \item For each $(\lambda, \mu) \in k^2$ calculate
+        $\spec(\phi)^{-1}(\fm_{\lambda, \mu})$. 
+\end{enumerate}
+
+\textbf{Solution.}
+\begin{enumerate}
+    \item By exercise 1, the maximal ideals are precisely the ideals of the 
+        form $(\pi, g)$ where $\pi \in k[x]$ is prime and $g \in k[x,y]$ is an
+        element with reduction mod $\pi$ is irreducible. As $k$ is algberically
+        closed, we find that $(\pi) = (x-\lambda)$ for some $\lambda \in k$.
+        Now $k[x]/(x-\lambda) \cong k$, the isomorphism is given by $x \mapsto 
+        \lambda$. Hence $g(\lambda, y) \in k[y]$ needs to be irreducible, 
+        i.e., of the form $y - \mu$. 
+    \item We can give an isomorphism $k[u,v][1/v] \to k[x,y][1/x]$ via
+        $u \mapsto x$ and $v \mapsto y/x$. Checking that this is an isomorphism
+        is straight-forward. 
+    \item Note that $\spec(\pi)^{-1}(\fm_{\lambda, \mu})$ is equal to the set of
+        prime ideals $\fp \subset k[u,v]$ for which $\phi(\fm_{\lambda, \mu})
+        \subset \fp$. By the homomorphism theorem, we find
+        \begin{equation*}
+            \{\fp \subset k[u,v] \text{ prime} \mid \phi(\fm_{\lambda, \mu})
+            \subset \fp\} \xto{1:1} \spec(k[u,v]/\phi(\fm_{\lambda, \mu})).
+        \end{equation*}
+        We find $\phi(\fm_{\lambda, \mu}) = (u - \lambda, uv - \mu)$, hence 
+        $$k[u,v] / \phi(\fm_{\lambda, \mu}) \cong k[u,v]/(u - \lambda, uv - \mu)
+        \cong k[v]/(v \lambda - \mu).$$
+        But this can be calculated explicitely:
+        \begin{equation*}
+            k[v]/(v \lambda - \mu) \cong \begin{cases}
+                k, &\text{ if } \lambda \neq 0 \\
+                k[v], &\text{ if } \lambda = 0 \text{ and } \mu = 0\\
+                0, &\text{ if } \lambda = 0 \text{ and } \mu \neq 0\\
+            \end{cases}
+        \end{equation*}
+\end{enumerate}
+
+\exercise{3}
+    Let $A$ be a ring of Krull dimension $n \coloneqq \dim A$. Show that 
+    \begin{equation*}
+        n+1 \leq \dim A[T] \leq 2n + 1.
+    \end{equation*}
+
+\textbf{Solution.}
+Let $$0 = \fq_0 \subset \fq_1 \subset \dots \subset \fq_m$$ be a maximal chain of 
+prime ideals in $A[T]$. Write $\fp_i = \fq_i \cap A$. We obtain an ascending chain
+of prime ideals 
+\begin{equation*}
+    0 = \fp_0 \subset \fp_1 \subset \dots \subset \fp_m
+\end{equation*}
+in $A$, which by the assumption on the dimension of $A$ contains at most $n+1$
+different prime ideals. We will show that $\fp_i = \fp_{i+1}$ implies
+$\fp_{i+1} \neq \fp_{i+2}$, which shows $m \leq 2n + 1$. 
+
+More generally, we'll show that for every prime ideal $\fp \subset A$ the set of
+prime ideals $\fq \subset A[T]$ with $\fq \cap A = \fp$ (the primes above
+$\fp$) can have chains of length at most two. Let $\fp \subset A$ be such a prime
+ideal. By passing to the localization $A_\fp = S^{-1} A$ with $S = A\setminus \fp$,
+we may assume that $\fp$ is maximal in $A$. 
+Now $A/\fp$ is a field, hence $A/\fp[T]$ is a PID, hence of dimension $1$. 
+The inclusion-preserving bijection
+\begin{equation*}
+    \{\fq \subset A/\fp[T]\} \xto{1:1} \{\fq \subset A[T] \mid A[T]\fp \subset
+    \fq \}
+\end{equation*}
+solves the exercise.
+
+\exercise{4}
+Let $A$ be a ring and $S, T \subset A$ multiplicative subsets with $S \subset T$. 
+\begin{enumerate}
+    \item Let $\iota_S : A \to S^{-1}A$ be the natural ring homomorphism. Show that 
+        $\iota_S^{-1}((S^{-1} A)^\times)$ is the saturation $\bar S$ of $S$. 
+    \item Show that there exists a unique ring homomorphism $\iota:  S^{-1}A \to
+        T^{-1}A$ such that $\iota \circ \iota_S = \iota_T.$
+    \item Deduce that $\iota$ is an isomorphism if and only if $\bar S = \bar T$. 
+\end{enumerate}
+
+\textbf{Solution.}
+
+First a reminder: The saturation of a subset $S \subset A$ is given by the set
+$$\bar S = \{s \in A \mid \exists a \in A : as \in S\}.$$
+
+\begin{enumerate}
+    \item First remember that $\iota_S$ is given by $a \mapsto \frac a1$. 
+        Now let's try to work out what the units in $S^{-1}A$ are. Remember that
+        $S^{-1}A$ has underlying set 
+        \begin{equation*}
+            (A \times S) / \sim_S, \quad \text{where} \quad
+            (a,s) \sim_S (a', s') \text{ iff } as' = a's. 
+        \end{equation*}
+        In particular, we find that an element $(a,1)$ ($=\frac a1 = \iota_S(a)$)
+        lies in the units of
+        $S^{-1}A$ if and only if there are $a' \in A$, $s' \in S$ with 
+        $(a a', s') \sim_S (1,1)$. This condition is equivalent to
+        $(a a', 1) \sim_S (s', 1)$, which translates directly to what we had to
+        show. 
+
+    \item We define $\iota$ on representing objects using the inclusion
+        $A \times S \to A \times T$. It is clear that this morphism behaves well
+        under the equivalence relations $\sim_S$ and $\sim_T$ (here $\sim_T$ is
+        defined the same way as for $\sim_S$), so we obtain a well-defined function
+        \begin{equation*}
+            S^{-1}A \cong (A \times S)/\sim_S \to (A\times T)/\sim_T \cong T^{-1}A.
+        \end{equation*}
+        One readily checks that this indeed gives a map of rings (with
+        addition and multiplication defined accordingly). One also readily checks 
+        that $\iota \circ \iota_S = \iota_T$. 
+
+    \item We show that the saturation of $S$ is maximal among the subsets $S
+        \subset S' \subset A$ with $S'^{-1} A \cong S^{-1} A$ (where the induced 
+        morphism is given by $\iota$). 
+        We first note that there is no difference between localizing at $S$ and
+        localizing at $\bar S$. Indeed, given some $s \in \bar S$, there is 
+        some $a \in A$ with $as \in S$. But now, given any $b \in A$, the element 
+        $\frac bs \in \bar S^{-1} A$ lies in the same equivalence class
+        as $\frac{ba}{sa} \in S^{-1} A$. Next, any subset $S \subset T \subset A$
+        that is not contained in $\bar S$ has non-isomorphic localization.
+        Indeed, assume $t \in T \setminus \bar S$. Then the
+        equivalence class of $\frac 1t \in T^{-1}A$ does not lie in the image
+        of $\iota$ by construction. Finally, note that whenever
+        $S \subset T \subset \bar S$, we have $\bar T = \bar S$. 
+        
+        This solves the exercise in an instant. For the one direction, if
+        $\bar S = \bar T$, we find 
+        \begin{equation*}
+            S^{-1} A \cong \bar S^{-1} A = \bar T^{-1}A \cong T^{-1}A.
+        \end{equation*}
+        For the other direction, if $S^{-1} A \cong T^{-1} A$, the result above
+        directly implies $\bar S = \bar T$. 
+\end{enumerate}
+
+
+\contactend
+\end{document}
