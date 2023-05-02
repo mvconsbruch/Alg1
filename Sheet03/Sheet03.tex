@@ -134,8 +134,14 @@ $\fp_{i+1} \neq \fp_{i+2}$, which shows $m \leq 2n + 1$.
 More generally, we'll show that for every prime ideal $\fp \subset A$ the set of
 prime ideals $\fq \subset A[T]$ with $\fq \cap A = \fp$ (the primes above
 $\fp$) can have chains of length at most two. Let $\fp \subset A$ be such a prime
-ideal. By passing to the localization $A_\fp = S^{-1} A$ with $S = A\setminus \fp$,
-we may assume that $\fp$ is maximal in $A$. 
+ideal. For $S = A\setminus \fp \subset A \subset A[T]$ we make use
+of the bijection
+\begin{equation*}
+    \{ \text{prime ideals in $S^{-1} A$} \} \xto{1:1} \{\text{prime ideals in $A$ not intersecting $S$} \},
+\end{equation*}
+which shows that there is no difference between primes above $\fp$ in $A$ and in 
+$A_\fp = S^{-1}A$. 
+Hence we may assume that $\fp$ is maximal in $A$. 
 Now $A/\fp$ is a field, hence $A/\fp[T]$ is a PID, hence of dimension $1$. 
 The inclusion-preserving bijection
 \begin{equation*}
