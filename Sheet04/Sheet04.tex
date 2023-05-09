@@ -114,5 +114,49 @@ Let $A$ be a principal ideal theorem.
         $k = l$ and $(a_i) = (b_i)$ for all $i$. 
 \end{enumerate}
 
+\textbf{Solution.}
+\begin{enumerate}
+    \item First, note that there are isomorphism (of $A/(\pi)$ vector spaces)
+        \begin{equation*}
+            \pi^n B/\pi^{n+1}B \cong \pi^n \left(A / (a)\right) /
+            \pi^{n+1}\left(A / (a)\right) \cong \pi^n A / ((\pi^{n+1}, a) \cap
+            (\pi^n)).
+        \end{equation*}
+        We have seen before that for principal ideal domains, we have 
+        $\dim_{A/(\pi)} (\pi^n A)/(\pi^{n+1}A) = 1$. The right hand side
+        of the equation above is the same as $\pi^n A/\pi^{n+1}A$ if 
+        $a \in (\pi^{n+1})$, otherwise we quotient out by some
+        non-zero subspace. Hence we see that 
+        the quotient above vanishes if and only if $a \not \in \pi^{n+1}$, that is,
+        if and only if $\nu_\pi(a) \geq n+1$. 
+    \item The exercise is confusing, because depending on how one thinks about 
+        modules over rings (especially if one thinks of them as generalized
+        vector spaces) it might seem tautological. The main problem is that
+        plain isomorphisms don't necessarily respect direct sums. Over
+        non-commutative rings, there even are examples of modules $S$ for which 
+        $S\oplus S \cong S$! Over PIDs however, everything seems to be
+        well-behaved. We solve the exercise in two steps.\\
+        \textit{Step 1: $r=s$.} Let $K = \Frac(A)$ denote the field of
+        fractions of $A$. Then
+        upon tensoring with $K$, the torsion part of $M$ and $N$ vanishes.
+        Now by $M \cong N$, we find $K^r \cong K \otimes M \cong K \otimes N \cong
+        K^s$. As every basis of a finite dimensional vector space has the same
+        number of elements, this shows $r = s$. Appearently you have also already
+        seen this in the lecture. \\
+        \textit{Step 2: The torsion part.} We fix some prime element $\pi \in A$ and 
+        use part 1 of the exercise. The isomorphism $M \cong N$ yields an
+        isomorphism $\pi^n M/\pi^{n+1}M \cong \pi^n N/\pi^{n+1}N$. 
+        Choosing $n = \nu_\pi(a_k)$, this shows that the $\pi$-adic valuations
+        of $a_k$ and $b_l$ agree. Moreover, the number 
+        $$ d_n=\dim_{A/(\pi)} \pi^n M/\pi^{n+1}M = \dim_{A/(\pi)} \pi^n
+           N/\pi^{n+1}N $$
+        is the number of elements among the $a_i$ such that $\nu_\pi(a_i) = n$. 
+        Iterating over all prime numbers $\pi$, this shows that $\nu_\pi(a_k) =
+        \nu_\pi(b_l)$ for all primes $\pi$, so that $(a_k) = (b_l)$. 
+
+
+
+\end{enumerate}
+
 \contactend
 \end{document}
