@@ -69,8 +69,10 @@ Further transformations yield
 \end{equation*}
 This allows us to calculate kernel and cokernel of $S$. We find
 \begin{equation*}
-    \ker(S) \cong 0, \quad \coker(S) \cong \Z \oplus \Z/6\Z \oplus \Z/26\Z.
+    \ker(S) \cong \Z, \quad \coker(S) \cong \oplus \Z/6\Z \oplus \Z/26\Z \cong
+    \Z/2\Z \oplus \Z/78\Z.
 \end{equation*}
+This shows that the elementary divisors are given by $2$ and $78$. 
 
 \exercise{3}
 Let $A$ be a ring, let $\fa \subset A$ be an ideal and let $M, N_i$, $i \in I$, be $A$-modules for some set $I$. 
@@ -90,31 +92,42 @@ Let $A$ be a ring, let $\fa \subset A$ be an ideal and let $M, N_i$, $i \in I$, 
 \end{enumerate}
 
 \textbf{Solution.} 
+This exercise looks like you'd have to do lots of calculations, but there is the
+following rule:
+\begin{equation*}
+    \textit{NEVER DO ANYTHING EXPLICITLY WHEN WORKING WITH TENSOR PRODUCTS.}
+\end{equation*}
 \begin{enumerate}
-    \item By the unique property of the direct sum, defining $\Phi$ is the same
-        as defining morphisms $\Phi_i: N_i \otimes_A M \to \left( \bigoplus_{i \in I}
-            N_i \right) \otimes_A M$. Note that $N_i \otimes_A M$ is generated
-            by elements of the form $n_i \otimes m$ (with $n_i \in N_i$ and $m
-            \in M$), and the exercise already specifies how $\Phi_i$ is defined
-            on those elements, namely by
-            \begin{equation*}
-                \Phi_i( n_i \otimes m) = (\dots, 0, n_i, 0, \dots) \otimes m \in
-                \left( \bigoplus_{i \in I} N_i \right ) \otimes_A M.
-            \end{equation*}
-            One could check now that this is well defined (remember that the
-            elements $n_i \otimes m$ are only defined up to the relation
-            $(an) \otimes m \sim n \otimes (am)$). 
-            But we use the universal property. The map is exactly the map that
-            comes from the bilinear map
-            $N_i \times M \to \left(\bigoplus_{i \in I} N_i \right) \otimes_A M$,
-            $(n_i, m) \mapsto ( \dots,0, n_i,0, \dots ) \otimes m$.
-            By construction, $\Psi_i$ is a bijection on its image (really, we 
-            just put $0$s everywhere else), and the images of $\Psi_i$ have
-            intersection $\{0\}$ and generate all of $\left( \bigoplus_{i \in I}
-                N_i \right) \otimes M$. 
-            Hence $\Psi$ is an isomorphism.
+    \item We could try to solve this by somehow checking that the map is
+        well-defined, working everything out element-wise, and in the end
+        showing that the isomorphism we obtain is somehow unique. But this is
+        messy, and probably confusing to anyone who wants to follow the
+        argument. It is much cleaner to work with universal properties. 
+        Note that $\bigoplus_{i \in I} (N_i \otimes_A M)$ satisfies the
+        following universal
+        property: 
+        \begin{center}
+        \textit{For any $A$-module $P$ and any tuple of bilinear maps
+        $(\phi_i: N_i \times M \to P)_i$,} \\ \textit{there is a unique linear map 
+        $\Phi: \bigoplus_{i \in I} (N_i \otimes M) \to P$ such that 
+        $\Phi(n_i \otimes m) = \phi_i(n_i, m)$.}
+        \end{center}
+        That $\bigoplus_{i \in I} (N_i \otimes_A M)$ satisfies this 
+        universal property is easy to see. The UP of the tensor product
+        gives linear maps $N_i \otimes M \to P$ associated to $\phi_i$, and
+        we obtain $\phi$ by the UP of the direct sum. But note that 
+        $(\bigoplus_{i \in I} N_i) \otimes M$ satisfies the same UP. Indeed, one 
+        easily checks that a tuple of bilinear maps $(\phi_i: N_i \times M \to
+        P)_{i \in I}$ is the same data as a single bilinear map $(\phi:
+        (\bigoplus_{i \in I} N_i) \times M \to P)$. 
+        This automatically gives a unique isomorphism 
+        \begin{equation*}
+            (\bigoplus_{i \in I} N_i) \otimes M   \cong
+            \bigoplus_{i \in I} (N_i \otimes M),
+        \end{equation*}
+        which is of the desired form by construction.
 
-        \item Again, we use the universal property. The mapping
+    \item I lied to you, this time we do things explicitely. The mapping
             \begin{equation*}
                 A/\fa \times M \to M / \fa M, \quad (a + \fa, m) \mapsto 
                 am + \fa M.
@@ -197,6 +210,9 @@ $m_1, m_2 \in M$. It is called alternating if $(m,m) = 0$ for all $m \in M$.
             } a_{ij} = a_{ji} \}\\ \cong \operatorname{SymBiHom}(A^n, A^n; N)
             \cong \Hom_A(\Sym^2_A(A^2) , N).
         \end{multline*}
+        Here, SymBiHom$(A^n, A^n; N)$ denotes the space of symmetric bilinear maps
+        $A^n \times A^n \to N$. 
+
         The functor sending $N$ to $N^{\frac{n(n+1)}2}$ is represented by 
         $A^{\frac{n(n+1)}2}$. Hence, utilizing the Yoneda-lemma, we find that 
         $A^{\frac{n(n+1)}2} \cong \Sym^2_A(A^n)$. 
