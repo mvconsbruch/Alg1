@@ -35,6 +35,42 @@ Determine its elementary divisors and the kernel/cokernel of the map
 $\Z^3 \xto S \Z^2$ (up to isomorphy).
 
 \textbf{Solution.}  
+We want to find simpler representatives of the residue class of $S$ in the double
+quotient $\GL_2(A) \backslash \Mat_{2 \times 3}(A) / \GL_3(A)$. We add twice
+the lower row to the upper row (which is the same as multiplying by $\smat 1201$ 
+from the left), which gives
+\begin{equation*}
+    S \sim \begin{pmatrix}
+        0 & 26 & 0 \\
+        18 & 6 & 12
+    \end{pmatrix}.
+\end{equation*}
+Further transformations yield
+\begin{equation*}
+    \begin{pmatrix}
+        0 & 26 & 0 \\
+        18 & 6 & 12
+    \end{pmatrix}
+    \to 
+    \begin{pmatrix}
+        0 & 26 & 0 \\
+        6 & 6 & 12
+    \end{pmatrix}
+    \to
+    \begin{pmatrix}
+        0 & 26 & 0 \\
+        6 & 0 & 0
+    \end{pmatrix}
+    \to 
+\begin{pmatrix}
+        6 & 0 & 0 \\
+        0 & 26 & 0
+    \end{pmatrix}.
+\end{equation*}
+This allows us to calculate kernel and cokernel of $S$. We find
+\begin{equation*}
+    \ker(S) \cong 0, \quad \coker(S) \cong \Z \oplus \Z/6\Z \oplus \Z/26\Z.
+\end{equation*}
 
 \exercise{3}
 Let $A$ be a ring, let $\fa \subset A$ be an ideal and let $M, N_i$, $i \in I$, be $A$-modules for some set $I$. 
@@ -130,12 +166,12 @@ $m_1, m_2 \in M$. It is called alternating if $(m,m) = 0$ for all $m \in M$.
         exercise, we first obtain a morphism $\psi: M \otimes_A M \to N$ by
         the UP of the tensor product.
         \[\begin{tikzcd}[ampersand replacement=\&]
-        	{M \times M} \&\& {M \otimes_A M} \\
-        	\& N \&\& {\Sym_A^2(M)}
+        	{M \times M} \&\& {M \otimes M} \\
+        	\& N \&\& {\Sym^2_A(M) \cong (M \otimes_A M)/G}
         	\arrow["{(-,-)}"', from=1-1, to=2-2]
-        	\arrow["{(m_1, m_2) \mapsto m_1 \otimes m_2}", from=1-1, to=1-3]
+        	\arrow["{(m_1,m_2) \mapsto m_1 \otimes m_2}", from=1-1, to=1-3]
         	\arrow["\psi", dashed, from=1-3, to=2-2]
-        	\arrow["{\text{proj}}", from=1-3, to=2-4]
+        	\arrow[from=1-3, to=2-4]
         	\arrow["\Psi", dashed, from=2-4, to=2-2]
         \end{tikzcd}\]
         By construction, we have $G \subset \ker \psi$, so by the universal property
