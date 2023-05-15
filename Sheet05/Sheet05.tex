@@ -1,0 +1,150 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+
+\begin{document}
+
+\begin{center}
+    \huge{Solutions to Sheet 5}
+\end{center}
+
+\exercise{1}
+Let $A$ be a ring and let $\fa_1, \dots, \fa_n \subset A$ be ideals such
+that $\bigcap_{i=1}^n \fa_i = \{0\}$. Assume that each ring 
+$A / \fa_i$ is noetherian. Show that $A$ is noetherian. 
+
+\textbf{Solution.}
+When does this situation arise? One example are rings of the form
+$A / \bigcap_i \fa_i$. 
+
+
+\exercise{2}
+Consider the matrix
+\begin{equation*}
+    S \coloneqq \begin{pmatrix}
+        -36 & 14 & -24 \\
+        18 & 6 & 12
+    \end{pmatrix}.
+\end{equation*}
+Determine its elementary divisors and the kernel/cokernel of the map
+$\Z^3 \xto S \Z^2$ (up to isomorphy).
+
+\exercise{3}
+Let $A$ be a ring, let $\fa \subset A$ be an ideal and let $M, N_i$, $i \in I$, be $A$-modules for some set $I$. 
+\begin{enumerate}
+    \item Show that there exists a unique isomorphism
+        \begin{equation*}
+            \Phi: \bigoplus_{i \in I} (N_i \otimes_A M) \to \left( \bigoplus_{i
+                \in I} N_i \right ) \otimes_A M
+        \end{equation*}
+        such that $\Phi((\dots,0, n_i \otimes m, 0 \dots)) = (\dots, 0, n_i, 0,\dots) \otimes m$ for all $n_i \in N_i$, $i \in I$, $m \in M$. 
+    \item Show that there exists a unique isomorphism
+        \begin{equation*}
+            \Psi: A / \fa \otimes_A M \to M/\fa M
+        \end{equation*}
+        such that $\Psi((a + \fa) \otimes m) \mapsto am + \fa M$ for all 
+        $a \in A$, $m \in M$. 
+\end{enumerate}
+
+\textbf{Solution.} 
+\begin{enumerate}
+    \item By the unique property of the direct sum, defining $\Phi$ is the same
+        as defining morphisms $\Phi_i: N_i \otimes_A M \to \left( \bigoplus_{i \in I}
+            N_i \right) \otimes_A M$. Note that $N_i \otimes_A M$ is generated
+            by elements of the form $n_i \otimes m$ (with $n_i \in N_i$ and $m
+            \in M$), and the exercise already specifies how $\Phi_i$ is defined
+            on those elements, namely by
+            \begin{equation*}
+                \Phi_i( n_i \otimes m) = (\dots, 0, n_i, 0, \dots) \otimes m \in
+                \left( \bigoplus_{i \in I} N_i \right ) \otimes_A M.
+            \end{equation*}
+            One could check now that this is well defined (remember that the
+            elements $n_i \otimes m$ are only defined up to the relation
+            $(an) \otimes m \sim n \otimes (am)$). 
+            But we use the universal property. The map is exactly the map that
+            comes from the bilinear map
+            $N_i \times M \to \left(\bigoplus_{i \in I} N_i \right) \otimes_A M$,
+            $(n_i, m) \mapsto ( \dots,0, n_i,0, \dots ) \otimes m$.
+            By construction, $\Psi_i$ is a bijection on its image (really, we 
+            just put $0$s everywhere else), and the images of $\Psi_i$ have
+            intersection $\{0\}$ and generate all of $\left( \bigoplus_{i \in I}
+                N_i \right) \otimes M$. 
+            Hence $\Psi$ is an isomorphism.
+
+        \item Again, we use the universal property. The mapping
+            \begin{equation*}
+                A/\fa \times M \to M / \fa M, \quad (a + \fa, m) \mapsto 
+                am + \fa M.
+            \end{equation*}
+            is well-defined and bilinear, which is easy to check. This gives the
+            desired map $\Psi: A/\fa \otimes_A M \to M/\fa M$. It is surjective 
+            as $\Psi(1 \otimes m) = m + \fa M$, and injective because if 
+            $\Psi((a + \fa) \otimes m) = 0 + \fa M$, we have $am \in \fa M$.
+            Hence $am = a' m'$ for some $a' \in \fa, m' \in M$. In particular,
+            $$a \otimes m = 1 \otimes (am) = 1 \otimes (a' m') = a' \otimes m' = 0
+            \in A/\fa \otimes_A M.$$ 
+            This shows injectivity of $\Psi$, and we are done.
+\end{enumerate}
+
+\exercise{4}
+Let $A$ be a ring and let $M,N$ be $A$-modules. A bilinear map 
+$(-,-): M \times M \to N$ is called symmetric if $(m_1, m_2) = (m_2, m_1)$ for all
+$m_1, m_2 \in M$. It is called alternating if $(m,m) = 0$ for all $m \in M$. 
+\begin{enumerate}
+    \item Show that there exists an $A$-module $\Sym^2_A(M)$ and a symmetric bilinear
+        map $\iota: M \times M \to \Sym^2_A(M)$ with the following universal
+        property: For every $A$-module $N$ and for every symmetric bilinear map
+        $(-,-): M \times M \to N$ there exists a unique $A$-linear map $\Phi:
+        \Sym^2_A(M) \to N$ usch that for all $m_1, m_2 \in M$
+        \begin{equation*}
+            (m_1, m_2) = \Psi(\iota(m_1, m_2)).
+        \end{equation*}
+        Construct similarly an $A$-module $\Lambda^2_A(M)$ with a universal
+        alternating bilinear map $\gamma: M \times M \to \Lambda^2_A(M)$. 
+
+    \item Show that $\Sym^2_A(A^n)$ and $\Lambda^2_A(A^n)$ are free $A$-modules
+        of ranks $\frac{n(n+1)}2$ and $\frac{n(n-1)}2$. 
+\end{enumerate}
+
+\textbf{Solution.}
+\begin{enumerate}
+    \item
+        Okay, the $\Sym$-construction should be somehow similar to the construciton
+        of $\otimes$, and ideally all proofs of properties simply follow from
+        the universal
+        property of the tensor product. In the construction of the tensor product,
+        $(m_1, m_2)$ corresponds to the image of $\phi(m_1 \otimes m_2)$ for 
+        some suitable morphism $\phi$. Imposing that $(m_1, m_2) = (m_2, m_1)$ 
+        corresponds to the statement that in $\Sym^2_A$, any morphism 
+        should send $(m_1 \otimes m_2 - m_2 \otimes m_1)$ to zero. 
+        Building on this, we define $\Sym^2_A(M)$ as $(M \otimes_A M)/ G$, where
+        $G$ is the $A$-module generated by elements of the form $(m_1 \otimes m_2 -
+        m_2 \otimes m_1)$. We check that this works. With the notation of the 
+        exercise, we first obtain a morphism $\psi: M \otimes_A M \to N$ by
+        the UP of the tensor product.
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        	{M \times M} \&\& {M \otimes_A M} \\
+        	\& N \&\& {\Sym_A^2(M)}
+        	\arrow["{(-,-)}"', from=1-1, to=2-2]
+        	\arrow["{(m_1, m_2) \mapsto m_1 \otimes m_2}", from=1-1, to=1-3]
+        	\arrow["\psi", dashed, from=1-3, to=2-2]
+        	\arrow["{\text{proj}}", from=1-3, to=2-4]
+        	\arrow["\Psi", dashed, from=2-4, to=2-2]
+        \end{tikzcd}\]
+        By construction, we have $G \subset \ker \psi$, so by the universal property
+        of kernels, $\psi$ extends uniquely to a morphism $\Psi: \Sym^2_A(M)
+        \cong (M \otimes_A M) / G \to N$. 
+
+        We define $\Lambda^2_A(M)$ similarly, this time we define $G$ as
+        submodule of 
+        $M \otimes_A M$ generated by elements of the form $(m \otimes m)$. 
+
+    \item Note that similarly to vector spaces, $A^n \otimes_A A^n$ is the 
+        free module generated over the basis $e_i \otimes e_j$. In the case of 
+        $\Sym^2_A$, we need to quotient out the submodule generated by 
+        elements of the form $m_1 \otimes m_2 - m_2 \otimes m_1$. 
+\end{enumerate}
+
+
+\contactend
+\end{document}
