@@ -140,6 +140,20 @@ following rule:
             $$a \otimes m = 1 \otimes (am) = 1 \otimes (a' m') = a' \otimes m' = 0
             \in A/\fa \otimes_A M.$$ 
             This shows injectivity of $\Psi$, and we are done.
+
+
+            HAHAHA FOOLS! The proof above doesn't work! Namely, to show injectivity,
+            it does not suffice to check that there are no nontrivial
+            elements of the form $a \otimes m$ that get sent to zero. There might
+            still be linear combinations of such elements which are getting
+            sent to zero. But showing that $\sum a_i \otimes m_i \mapsto 0
+            \implies \sum a_i \otimes m_i = 0$ is really hard, there is no way
+            to get a handle on the sum. 
+            
+            So we try UPs again. We show that for any bilinear map
+            $(-,-): A/\fa \times M \to P$ there is a unique linear map 
+            $\phi: M/\fa M \to P$ with $\phi(am) = (a,m)$. This can be checked
+            directly. 
 \end{enumerate}
 
 \exercise{4}
