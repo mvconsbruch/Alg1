@@ -1,0 +1,212 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+\usepackage{../quiver}
+
+\begin{document}
+
+\begin{center}
+    \huge{Solutions to Sheet 6}
+\end{center}
+
+\exercise{1}
+Let $A$ be a ring, $f \in A$ a non-zero divisor, $\fa = (f)$ and $\fb \subset A$
+an ideal. Show that the natural map
+\begin{equation*}
+    \fa \otimes_A \fb \to \fa \cdot \fb, \quad a \otimes b \mapsto a\cdot b
+\end{equation*}
+is an isomorphism.
+
+\textbf{Solution.} 
+As $\fa = (f)$, we have an isomorphism $\phi: A \xto \sim \fa$, given by 
+$a \mapsto fa$. Also note that $\phi|_\fb: \fb \to \fa \fb$ is an isomorphism.
+Now we have the diagram
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\fa \otimes_A \fb} \&\& {\fa \fb} \\
+	\\
+	{A \otimes_A \fb} \&\& \fb
+	\arrow["\sim", from=3-1, to=3-3]
+	\arrow["{\phi|_\fb}", from=3-3, to=1-3]
+	\arrow["{\phi \otimes \fb}", from=3-1, to=1-1],
+\end{tikzcd}\]
+where all arrows are isos, yielding an isomorphism $\fa \otimes_A \fb \to \fa \fb$. 
+
+\exercise{2}
+Let $A$ be a ring, let $I$ be a set and let $M, N_i, i \in I$ be $A$-modules. 
+\begin{enumerate}
+    \item Assume that $M$ is finitely generated (resp. finitely presented). Show that the natural map 
+        \begin{equation*}
+        M \otimes_A \prod_{i \in I} N_i \to \prod_{i \in I} M \otimes_A N_i
+        \end{equation*}
+        is surjective (resp. bijective). 
+    \item Take $A = \Z[X_0, X_1,  \dots]$, $J = (X_0, X_1, \dots)$. Show that the
+        natural map $A/J \otimes_A A\lbr T \rbr \to A/J\lbr T\rbr$ is not
+        injective.
+\end{enumerate}
+\textbf{Solution.}
+\begin{enumerate}
+    \item First let's recall what finitely generated and finitely presented meant.
+        An $A$-module $M$ is finitely generated if there exists a surjective 
+        morphism of $A$-modules
+        \begin{equation*}
+            A^{\oplus n} \to M.
+        \end{equation*}
+        Furthermore, we call $M$ finitely presented if the kernel of this map is
+        again finitely generated (that is, there is a finite number of relations
+        among the images of the generators), which is to say that there is an 
+        exact sequence
+        \begin{equation*}
+            A^m \to A^n \to M \to 0
+        \end{equation*}
+        for some integers $m,n \geq 0$. 
+
+        Next, let's find out what the \textit{natural map} is. We have for $i
+        \in I$ the projections $\prod_{i \in I} N_i \to N_i$, which we can
+        tensor with $M$ to obtain maps $M \otimes_A \prod_{i \in I} N_i 
+        \to M \otimes_A N_i$. The collection of these maps gives the desired
+        $M \otimes_A \prod_{i \in I} N_i \to \prod_{i \in I} M \otimes_A N_i$. 
+
+        Note that if $M \cong A^{\oplus n}$, this natural map is an isomorphism,
+        as we have
+        \begin{equation*}
+            A^{\oplus n} \otimes_A \prod_i N_i \cong (A \otimes_A \prod_i
+            N_i)^{\oplus n} \cong (\prod_i N_i)^{\oplus n} \cong \prod_i
+            (A^{\oplus n} \otimes_A N_i).
+        \end{equation*}
+        Here we used the commutativity of finite direct sums and tensor products and 
+        that of finite direct sums and products (note that finite sums are isomorphic
+        to finite products).
+
+        This puts us in the following situation, where we can use the $5$-lemma.
+        \[\begin{tikzcd}[ampersand replacement=\&]
+            {A^{\oplus m} \otimes_A \prod_{i \in I} N_i} \& {A^{\oplus n}
+            \otimes_A \prod_{i \in I} N_i} \& {M \otimes_A \prod_{i \in I} N_i}
+            \& 0 \& 0 \\
+            {\prod_{i \in I} (A^{\oplus m} \otimes_A  N_i)} \& {\prod_{i \in
+            I}( A^{\oplus n} \otimes_A  N_i )} \& {\prod_{i \in I}( M \otimes_A
+        N_i)} \& 0 \& 0.
+        	\arrow[from=1-1, to=1-2]
+        	\arrow[from=1-2, to=1-3]
+        	\arrow[from=1-3, to=1-4]
+        	\arrow["\sim", from=1-1, to=2-1]
+        	\arrow[from=2-1, to=2-2]
+        	\arrow[from=2-2, to=2-3]
+        	\arrow[from=2-3, to=2-4]
+        	\arrow[Rightarrow, no head, from=1-4, to=2-4]
+        	\arrow[Rightarrow, no head, from=1-5, to=2-5]
+        	\arrow[from=1-4, to=1-5]
+        	\arrow[from=2-4, to=2-5]
+        	\arrow["{\therefore \ \sim}", from=1-3, to=2-3]
+        	\arrow["\sim", from=1-2, to=2-2]
+        \end{tikzcd}\]
+
+    \item Note that $A/J \otimes_A A\lbr T \rbr \cong A \lbr T \rbr / J A\lbr T 
+        \rbr$. Take the element $f \coloneqq \sum_{i=1}^\infty x_i T^i \in
+        A\lbr T \rbr$. As all elements in $J A\lbr T \rbr$ only have a finite
+        number of $x_i$ arise in the coefficients, we find $f \not \in 
+        J A \lbr T \rbr$, hence $f \neq 0$ in $A\lbr T \rbr / J A\lbr T \rbr$. 
+        But $f \mapsto 0$ under the natural map: All the coefficients $x_i$
+        get sent to zero.
+
+\end{enumerate}
+
+\exercise{3}
+Let $k$ be a field, $K/ k$ an algebraic field extension, and $\bar k$ an alebraic
+closure of $k$. 
+\begin{enumerate}
+    \item If $V \to W$ is a $k$-linear injection of $k$-vector spaces, show that
+        $V \otimes \bar k \to W \otimes \bar k$ is a $\bar k$-linear injection.
+    \item Show that $K/k$ is separable if and only if the ring $K \otimes_k \bar k$
+        is reduced. 
+\end{enumerate}
+\textbf{Solution.}
+
+\begin{enumerate}
+    \item All $k$-vector spaces are injective, hence every injective map 
+        $V \to W$ admits a section $W \to V$. Tensoring the section with 
+        $\bar k$ yields a section of $V \otimes_k \bar k \to W \otimes_k \bar k$. 
+    \item We show that the following statements are equivalent:
+        \begin{enumerate}
+            \item $K/k$ is separable.
+            \item For all $\alpha \in K$, $k[\alpha]/k$ is separable.
+            \item $k[\alpha] \otimes_k \bar k$ is reduced for all $\alpha \in K$.
+            \item $K \otimes_k \bar k$ is reduced.
+        \end{enumerate}
+        (a) $\iff$ (b) is by definition. We show (b) $\iff$ (c). 
+        Let $f$ be the minimal polynomial of some $\alpha \in K$. 
+        As $K$ is algebraic over $k$, $f$ decomposes in $\bar k$ as 
+        $f(x) = \prod_{i = 1}^n (x - a_i)^{d_i}$ with $a_i \neq a_j$ whenever
+        $i \neq j$. Now we find 
+        \begin{equation*}
+            k[\alpha] \otimes_k \bar k \cong (k[x]/f(x)) \otimes_k \bar k
+            \cong \bar k[x]/f(x) \cong k[x]/(x-a_1)^{d_1} \times \dots \times k[x] /
+            (x-a_n)^{d_n},
+        \end{equation*}
+        which is reduced if and only if $d_1 = \dots = d_n = 1$, which is 
+        the case if and only if $k[\alpha]$ is reduced over $k$.
+
+        For (d) $\implies$ (c), we use part 1. The arguments there show that 
+        $k[\alpha] \to K$ is injective, hence $k[\alpha] \otimes_k \bar k$ is
+        isomorphic to a subring of $K \otimes_k \bar k$. But a subring of a
+        reduced subring is reduced.
+
+        Lastly we show (a) $\implies$ (d). Let $\zeta = \sum_{i=1}^n \alpha_i \otimes
+        b_i \in K \otimes_k \bar k$ be some element. Here, the $\alpha_i$ 
+        are elements of $K$, and as $K$ is separated, we find that 
+        $k[\alpha_1, \dots, \alpha_n]/k$ is a finite separated extension. But
+        now, by the primitive element theorem, there is some $\alpha \in K$
+        with $k[\alpha] \cong k[\alpha_1, \dots, \alpha_n]$, and
+        $k[\alpha] \otimes_k \bar k$ is reduced by (c) $\iff$ (a).
+\end{enumerate}
+
+\exercise{4}
+Let $A$ be a ring and let $I$ be an \textit{invertible} $A$-module, i.e., 
+there exists an $A$-module $J$ such that $I \otimes_A J \cong A$. Let
+$\phi: M \to N$ be a homomorphism of $A$-modules. 
+\begin{enumerate}
+    \item Show that $\phi$ is nonzero (resp. injective, resp. surjective) 
+        if and only if $\phi \otimes_A I: M \otimes_A I \to N \otimes_A I$
+        is so. 
+    \item Show that $I$ is finitely generated.
+\end{enumerate}
+
+\textbf{Solution.} 
+\begin{enumerate}
+    \item We have seen in the lecture that tensor products preserve surjectivity. 
+
+        To see that $\phi = 0$ if and only if $\phi \otimes_A I = 0$, just tensor
+        with $J$. 
+
+        Lastly, suppose that $\phi \otimes_A I$ is injective. Let $\psi: K \to
+        M$ be the kernel of $\phi$. We need to show that $\psi = 0$. 
+        We are in the following situation:
+        \[
+            \begin{tikzcd}[ampersand replacement=\&]
+            	K \& M \& N \&\& {I \otimes K} \& {I \otimes M} \& {I \otimes N}
+            	\arrow["\phi", from=1-2, to=1-3]
+            	\arrow["\psi", from=1-1, to=1-2]
+            	\arrow["0"', curve={height=12pt}, from=1-1, to=1-3]
+            	\arrow["{\psi \otimes I}", from=1-5, to=1-6]
+            	\arrow["{\phi \otimes I}", from=1-6, to=1-7]
+            	\arrow["0"', curve={height=12pt}, from=1-5, to=1-7]
+            \end{tikzcd}
+        \]
+        We know that $\phi \otimes I$ is injective, hence $\phi \otimes I$ has 
+        to be zero. But by preserving $0$, this shows that $\psi = 0$, hence
+        the kernel of $\phi$ vanishes. This shows that $\phi$ is injective.
+        The same argument replaced with $J$ shows that $\phi$ is injective if 
+        $\phi \otimes I$ is.
+
+    \item We have an isomorphism $\phi: I \otimes_A J \cong A$. Let's look at
+        the preimage of $1$ under $\phi$. It is given by some finite sum
+        $\phi^{-1}(1) = \sum_{k = 1}^n i_k \otimes j_k$. We claim that 
+        $i_1, \dots, i_n$ generate $I$. Indeed, look at the morphism 
+        $\psi: A^n \to I$, $e_k \mapsto i_k$. Upon tensoring with $J_k$ we obtain
+        a surjective morphism $\psi \otimes_A J: J^n \to A$, and $1 \in A$ lies in
+        the image. Hence $\psi \otimes_A J$ is surjective. But this shows that
+        $\psi$ is surjective (by part 1).
+\end{enumerate}
+
+
+\contactend
+\end{document}
