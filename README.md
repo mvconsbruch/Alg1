@@ -8,8 +8,8 @@ Warning: These are non-official, there might be errors. If you find errors, feel
 * [Sheet 2](Sheet02/Sheet02.pdf) Algebraic rings of integers, PIDs, minimal primes.
 * [Sheet 3](Sheet03/Sheet03.pdf) Prime ideals of polynomial rings of PIDs, a first version of Hilbert's Nullstellensatz, Krull dimension of polynomial rings, localization and saturation.
 * [Sheet 4](Sheet04/Sheet04.pdf) The ring of power series over noetherian rings is noetherian, holomorphic functions, stuff with modules
-* [Sheet 5](Sheet05/Sheet05.pdf) Noetherian rings, elementary divisors, universal properties. 
-* [Sheet 6](Sheet06/Sheet06.pdf) Noetherian rings, elementary divisors, universal properties.
+* [Sheet 5](Sheet05/Sheet05.pdf) Noetherian rings, elementary divisors, universal properties. (Corrected an error!) 
+* [Sheet 6](Sheet06/Sheet06.pdf) More on tensor products. 
 
 
 ###### Max von Consbruch, email: s6mavonc(at)uni-bonn(dot)de
