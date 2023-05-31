@@ -17,6 +17,7 @@ an ideal. Show that the natural map
 \end{equation*}
 is an isomorphism.
 
+
 \textbf{Solution.} 
 As $\fa = (f)$, we have an isomorphism $\phi: A \xto \sim \fa$, given by 
 $a \mapsto fa$. Also note that $\phi|_\fb: \fb \to \fa \fb$ is an isomorphism.
@@ -99,6 +100,15 @@ Let $A$ be a ring, let $I$ be a set and let $M, N_i, i \in I$ be $A$-modules.
         	\arrow["{\therefore \ \sim}", from=1-3, to=2-3]
         	\arrow["\sim", from=1-2, to=2-2]
         \end{tikzcd}\]
+        It may not be clear why the top and bottom row are exact. Here we will
+        also not give a complete answer. But the exactness of the top row
+        follows directly by the fact that the tensor product is right exact
+        (a good way to remember what right-exactness means is to remember that
+        right-exact functors \textit{turn cokernels into cokernels}),
+        and exactness of the bottom row follows from the fact that products
+        are exact (not in general for abelian categories but in the case of the 
+        category of $R$-modules). You'll have to find out what that last
+        sentence means by yourself.
 
     \item Note that $A/J \otimes_A A\lbr T \rbr \cong A \lbr T \rbr / J A\lbr T 
         \rbr$. Take the element $f \coloneqq \sum_{i=1}^\infty x_i T^i \in
