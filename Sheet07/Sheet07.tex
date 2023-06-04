@@ -34,7 +34,46 @@ let $N$ be a $B$-module.
 \end{enumerate}
 \textbf{Solution.}
 \begin{enumerate}
-    \item  
+    \item A function $\phi \in \Hom_B(B \otimes_A M , N)$ is uniquely determined
+        by its values on elementary tensors. We have $\phi(b \otimes m) = 
+        b \phi(1 \otimes m)$, so in reality $\phi$ is uniquely determined by 
+        its values on $1 \otimes m$. But any such morphism gives rise to 
+        a $A$-linear map via $m \mapsto 1\otimes m \mapsto \phi(1 \otimes m)$, 
+        and conversely any $\psi \in \Hom_A(M,N)$ yields a unique morphism
+        via $b \otimes m \mapsto b \psi(m) \in \Hom_B(B \otimes_A M, N)$. 
+        These constructions are quickly checked to be mutually inverse.
+
+        \textbf{Remark.} This is a special case of the so called 
+        \textit{Hom-Tensor adjunction}. It states that there is a 
+        natural isomorphism
+        \begin{equation*}
+            \Hom_B(M \otimes_A L, N) \cong \Hom_A(M, \Hom_B(L,N)).
+        \end{equation*}
+        In more fany terms, this says that the functors
+        $\Hom_B(L, -): \Mod_B \to \Mod_A$ and $- \otimes_A L: \Mod_A
+        \to \Mod_B$ is an adjoint pair, for any $B$-module $L$.
+
+    \item Again, universal properties. Of course, we'll want to show that this
+        is an isomorphism of $B$-modules. We do this by using the universal property.
+        What is a $B$-linear morphism $\phi: (M \otimes_A B) \otimes_B N 
+        \to P$? The same as a $B$-bilinear map $\Phi: (M \otimes_A B) \times N 
+        \to P$. But as $\Phi(m \otimes b, n) = b \Phi(m \otimes 1, n)$, any
+        such bilinear map is uniquely determined by its values on elements of 
+        the form $(m \otimes 1 , n)$, hence it really is the same as a
+        $A$-bilinear map $M \times N \to P$, given by
+        $(m,n) \mapsto (m \otimes 1, n) \mapsto \Phi(m \otimes 1, n)$.
+        This construction is quickly verified to be an isomorphism. But now
+        $(M \otimes_A B) \otimes_B N$ satisfies the universal property of $M
+        \otimes_A N$. 
+
+    \item We apply the above with $S^{-1}M_1 = M$ and $S^{-1}M_2 = N$ and
+        $B = S^{-1}A$. Note that $S^{-1}M_1 \otimes_A S^{-1}A \cong 
+        S^{-1}(S^{-1}M_1) \cong S^{-1}M_1$, which gives (following the above)
+        \begin{equation*}
+            S^{-1}M_1 \otimes_A S^{-1}M_2 \cong
+            (M \otimes_A S^{-1}A) \otimes_{S^{-1}A} S^{-1}M_2 \cong
+            S^{-1}M_1 \otimes_{S^{-1} A} S^{-1}M_2.
+        \end{equation*}
 \end{enumerate}
 
 \exercise{2}
