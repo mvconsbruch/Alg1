@@ -129,7 +129,22 @@ $M,N$ be $A$-modules.
 \textbf{Solution.}
 \begin{enumerate}
     \item First, note that we always (without hypothesis on $M$) obtain such a
-        map. This direclty follows (for example) from exercise 1.1 with $B = S^{-1}A$.
+        map. This follows (for example) from exercise 1.1 with $B = S^{-1}A$.
+        We obtain the isomorphism
+        \begin{equation*}
+            \Hom_A(M, S^{-1}N) \xto \sim \Hom_{S^{-1}A}(S^{-1} M, S^{-1}N).
+        \end{equation*}
+        Also, the natural map $N \to S^{-1}N$ yields a map 
+        \begin{equation*}
+            \Hom_A(M, N) \to \Hom_A(M,S^{-1}N).
+        \end{equation*}
+        Finally, as multiplication with any $s \in S$ gives an isomorphism on the right hand
+        side, we obtain a morphism
+        \begin{equation*}
+            S^{-1}\Hom_A(M, N) \to \Hom_A(M,S^{-1}N) \xto \sim \Hom_{S^{-1}A}(S^{-1} M, S^{-1}N).
+        \end{equation*}
+        by the universal property of localization on modules. One readily checks that 
+        this morphism is the one provided by the exercise.
 
         Now we have to show that this is an isomorphism if $M$ is finitely presented.
         As usual, we write $M$ as part of a short exact sequence
