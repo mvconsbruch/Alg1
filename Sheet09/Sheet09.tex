@@ -99,10 +99,12 @@ in the third there is one again. Note that in all cases, we are somehow
 "degree 2". In all three cases, the algebras lying over the primes
 are $k(x)$-algebras of dimension 2.
 
-\textbf{Remarks.}
+\textbf{Remarks.} Two remarks on calculations like this.
 \begin{enumerate}
-\item There is a neat formula to calculate tensor products, which 
-        Konrad called \textit{Torsten's magic potion formula.} It is given by
+\item When calculating fibers as above, there is a neat formula to calculate
+            tensor products, which I call \textit{Torsten's magic potion
+            formula.}\footnote{I do not know who Torsten is, or whether it's
+            \textit{Torsten} or \textit{Thorsten}.} It is given by
         the following:
         \begin{multline*}
             k[y_1, \dots, y_m]/I \otimes_{\phi, k[x_1, \dots, x_n], \psi} k[z_1, 
@@ -110,55 +112,59 @@ are $k(x)$-algebras of dimension 2.
             \phi(x_1) - \psi(x_1), \dots, \phi(x_n) - \psi(x_n)).
         \end{multline*}
 
-\item Also, there is a neat explanation why the fibers of a morphism on
-spectra induced by a morphism $f:A \to B$ over $\fp \in \spec(A)$ can be
-expressed in the form $\spec(B \otimes_A k(\fp))$.
-We will need another description of $\spec(R)$, which is 
-\begin{equation*}
-    \spec(R) = \{ f: R \to K \}/\sim,
-\end{equation*}
-where $K$ are arbitrary fields and $(f_1: R \to K_1) \sim (f_2: R \to K_2)$ if
-and only if there is some field $K'$ with morphisms $K_1 \to K'$, $K_2 \to K'$
-such that $f_1 = f_2$ after applying those morphisms. The bijections are given
-by sending $\fp \in \spec(R)$ to the morphism $R \to k(\fp)$ (in one
-direction), and by sending $f$ to $\ker(f)$ (in the opposite direction).
-With this description, a morphism of rings induces a morphism on spectra by
-precomposition.
-Remember the universal property of the tensor product of rings:
-\[\begin{tikzcd}[ampersand replacement=\&]
-	T \\
-	\& {A \otimes_R B} \& B \\
-	\& A \& R
-	\arrow[from=3-3, to=3-2]
-	\arrow[from=3-3, to=2-3]
-	\arrow[from=3-2, to=2-2]
-	\arrow[from=2-3, to=2-2]
-	\arrow[curve={height=-6pt}, from=3-2, to=1-1]
-	\arrow[curve={height=6pt}, from=2-3, to=1-1]
-	\arrow["{\exists!}"', dashed, from=2-2, to=1-1]
-\end{tikzcd}\]
-That is, given two $R$-algebras $A$ and $B$ and $T$ a morphism $A \otimes_R B \to T$
-is the same as $R$-algebra morphisms $A \to T$, $B \to T$ such that everything
-commutes with the structure morphisms from $R$.
-
-Now back to the fiber. We find 
-\begin{equation*}
-    \spec(f)^{-1}(A \to k(\fp)) = \{[g: B \to K] \mid g \circ f \sim (A \to k(\fp))\}
-\end{equation*}
-and the set on the right is exactly given by the set of morphisms $g$ such that
-there are commutative squares
-\[
-\begin{tikzcd}[ampersand replacement=\&]
-	B \& K \\
-	A \& {k(\fp)}
-	\arrow["f", from=2-1, to=1-1]
-	\arrow[from=2-1, to=2-2]
-	\arrow["g"', from=1-1, to=1-2]
-	\arrow[from=2-2, to=1-2]
-\end{tikzcd}
-\]
-up to equivalence, which is the same as $\spec(B \otimes_A k(\fp))$ by the 
-universal property of the tensor product.
+    \item Let $f: A \to B$ and $\fp \in \spec(A)$.  In the last exercise
+        session we discussed how using the homomorphism
+        theorems, $\spec(f)^{-1}(\fp) = \spec(B \otimes_A k(\fp))$ because
+        the prime ideals in $B \otimes_A k(\fp)$ are identify with those prime
+        ideals "above and below" $\fp$. 
+        Here, I'd like to discuss a perhaps less tedious way of arriving at this formula.
+        
+        We will need another description of $\spec(R)$, which is 
+        \begin{equation*}
+            \spec(R) = \{ f: R \to K \}/\sim,
+        \end{equation*}
+        where $K$ are arbitrary fields and $(f_1: R \to K_1) \sim (f_2: R \to K_2)$ if
+        and only if there is some field $K'$ with morphisms $K_1 \to K'$, $K_2 \to K'$
+        such that $f_1 = f_2$ after applying those morphisms. The bijections are given
+        by sending $\fp \in \spec(R)$ to the morphism $R \to k(\fp)$ (in one
+        direction), and by sending $f$ to $\ker(f)$ (in the opposite direction).
+        With this description, a morphism of rings induces a morphism on spectra by
+        precomposition.
+        Remember the universal property of the tensor product of rings:
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        	T \\
+        	\& {A \otimes_R B} \& B \\
+        	\& A \& R
+        	\arrow[from=3-3, to=3-2]
+        	\arrow[from=3-3, to=2-3]
+        	\arrow[from=3-2, to=2-2]
+        	\arrow[from=2-3, to=2-2]
+        	\arrow[curve={height=-6pt}, from=3-2, to=1-1]
+        	\arrow[curve={height=6pt}, from=2-3, to=1-1]
+        	\arrow["{\exists!}"', dashed, from=2-2, to=1-1]
+        \end{tikzcd}\]
+        That is, given two $R$-algebras $A$ and $B$ and $T$ a morphism $A \otimes_R B \to T$
+        is the same as $R$-algebra morphisms $A \to T$, $B \to T$ such that everything
+        commutes with the structure morphisms from $R$.
+        
+        Now back to the fiber. We find 
+        \begin{equation*}
+            \spec(f)^{-1}(A \to k(\fp)) = \{[g: B \to K] \mid g \circ f \sim (A \to k(\fp))\}
+        \end{equation*}
+        and the set on the right is exactly given by the set of morphisms $g$ such that
+        there are commutative squares
+        \[
+        \begin{tikzcd}[ampersand replacement=\&]
+        	B \& K \\
+        	A \& {k(\fp)}
+        	\arrow["f", from=2-1, to=1-1]
+        	\arrow[from=2-1, to=2-2]
+        	\arrow["g"', from=1-1, to=1-2]
+        	\arrow[from=2-2, to=1-2]
+        \end{tikzcd}
+        \]
+        up to equivalence, which is the same as $\spec(B \otimes_A k(\fp))$ by the 
+        universal property of the tensor product.
 
 \end{enumerate}
 
