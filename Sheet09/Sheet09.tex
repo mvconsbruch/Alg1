@@ -1,0 +1,264 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{../quiver}
+
+\begin{document}
+
+\begin{center}
+    \huge{Solutions to Sheet 9}
+\end{center}
+
+\exercise{1}
+Assume that $d \in \Z$ is not a square. Determine all $x,y,z \in \Z$ with
+$\gcd(x,y,z) = 1$ and $x^2 - dy^2 = z^2$. 
+
+\textbf{Solution.} 
+We do the same as in the lecture. First note that
+\begin{equation*}
+    L = \{(x,y,z) \mid x^2 - dy^2 = z^2\} \cong \{(x,y) \in \Q^2 \mid
+    x^2 - dy^2 = 1\} = L'.
+\end{equation*}
+Just as in the lecture we try to simultaneously solve the equations
+\begin{equation*}
+\begin{aligned}
+    x^2 - dy^2 &= 1 \\
+    qx + q &= y
+\end{aligned}
+\end{equation*}
+for $q \in \Q$.
+Some calculations later we arrive at the unique non-trivial solution $(x,y) =
+(\frac{1+dq^2}{1-dq^2}, \frac{2q}{1+dq^2}).$ Writing $q = \frac uv$ with
+$(u,v) = 1$, we find that all solutions are of the form
+\begin{equation*}
+    (x,y,z) = \begin{cases}
+        (v^2 + du^2, 2uv, v^2 - du^2), &\text{ if }v^2+ du^2 \text{ odd}\\
+        (\frac{v^2 + du^2}2, uv, \frac{v^2 - du^2}2), &\text{ if }v^2+ du^2
+        \text{ even.}
+    \end{cases}
+\end{equation*}
+
+\exercise{2}
+Let $k$ be an algebraically closed field and let $f(x) \in k[x]$ be a polynomial.
+Determine the set $\spec(k[x,y]/(y^2 - f(x)))$ and the cardinality of all fibers
+of the map
+\begin{equation*}
+    \spec(k[x,y]/(y^2 - f(x))) \to \spec(k[x])
+\end{equation*}
+that is induced by the $k$ algebra homomorphism $k[x] \to k[x,y]/(y^2-f(x))$, 
+$x \mapsto x$. 
+
+\textbf{Solution.}
+We have seen that the prime ideals of $k[x,y]$ are those of the form 
+$(x-a, y-b)$ for $a, b \in k$. The prime ideals of $k[x,y]/(y^2-f(x))$ are now 
+those which contain $y^2 - f(x)$. 
+
+There are two types of prime ideals in $k[x]$. Those of the form $(x-a)$
+for $a \in k$ and the zero-ideal. Let $\pi: \spec(k[x,y]/(y^2-f(x))) \to
+\spec(k[x])$ denote the morphism on spectra induced by the inclusion. We
+calculate the fibers. On the \textit{special} fibers we find
+\begin{equation*}
+    \pi^{-1}((x-a)) = \spec(k[x,y]/(y^2-f(x)) \otimes_{k[x],\ x \mapsto a} k).
+\end{equation*}
+We can calculate the tensor product explicitely. We find
+\begin{equation*}
+    k[x,y]/(y^2 - f(x)) \otimes_{k[x]} k = k[x,y]/(y^2-f(x), x-a) = 
+    k[y]/(y^2-f(a)).
+\end{equation*}
+And here we have
+\begin{equation*}
+    k[y]/(y^2-f(a)) = 
+    \begin{cases}
+        k^2, \quad &\text{if }f(a) \neq 0\\
+        k[y]/(y^2), \quad &\text{if } f(a) = 0.
+    \end{cases}
+\end{equation*}
+Hence the fibers either are given by two distinct "degree 1"-primes or by a 
+single "degree 2"-prime.
+
+At the \textit{generic} fiber we have 
+\begin{equation*}
+    \pi^{-1}((0)) = \spec(k[x,y]/(y^2-f(x)) \otimes_{k[x],\ x \mapsto x} k(x)).
+\end{equation*}
+Here the algebra calculates to
+\begin{equation*}
+    k[x,y]/(y^2-f(x)) \otimes_{k[x],\ x \mapsto x} k(x) = k(x)[y]/(y^2-f(x)).
+\end{equation*}
+Now
+\begin{equation*}
+    k(x)[y] / (y^2 - f(x)) \cong \begin{cases}
+        k(x)[y]/y^2, \quad &\text{if } f(x) = 0 \\
+        k(x)^2, \quad &\text{if } f(x) = g(x)^2 \neq 0\\
+        k(x)[\sqrt {f(x)}], \quad &\text{otherwise}.
+    \end{cases}
+\end{equation*}
+In the first case we have one prime ideal, in the second there are two, 
+in the third there is one again. Note that in all cases, we are somehow
+"degree 2". In all three cases, the algebras lying over the primes
+are $k(x)$-algebras of dimension 2.
+
+\textbf{Remarks.}
+\begin{enumerate}
+\item There is a neat formula to calculate tensor products, which 
+        Konrad called \textit{Torsten's magic potion formula.} It is given by
+        the following:
+        \begin{multline*}
+            k[y_1, \dots, y_m]/I \otimes_{\phi, k[x_1, \dots, x_n]} k[z_1, 
+            \dots, z_l]/J \\ \cong k[y_1, \dots, y_m , z_1, \dots, z_l]/(I, J,
+            \phi(x_1) - \psi(x_1), \dots, \phi(x_n) - \psi(x_n)).
+        \end{multline*}
+
+\item Also, there is a neat explanation why the fibers of a morphism on
+spectra induced by a morphism $f:A \to B$ over $\fp \in \spec(A)$ can be
+expressed in the form $\spec(B \otimes_A k(\fp))$.
+We will need another description of $\spec(R)$, which is 
+\begin{equation*}
+    \spec(R) = \{ f: R \to K \}/\sim,
+\end{equation*}
+where $K$ are arbitrary fields and $(f_1: R \to K_1) \sim (f_2: R \to K_2)$ if
+and only if there is some field $K'$ with morphisms $K_1 \to K'$, $K_2 \to K'$
+such that $f_1 = f_2$ after applying those morphisms. The bijections are given
+by sending $\fp \in \spec(R)$ to the morphism $R \to k(\fp)$ (in one
+direction), and by sending $f$ to $\ker(f)$ (in the opposite direction).
+With this description, a morphism of rings induces a morphism on spectra by
+precomposition.
+Remember the universal property of the tensor product of rings:
+\[\begin{tikzcd}[ampersand replacement=\&]
+	T \\
+	\& {A \otimes_R B} \& B \\
+	\& A \& R
+	\arrow[from=3-3, to=3-2]
+	\arrow[from=3-3, to=2-3]
+	\arrow[from=3-2, to=2-2]
+	\arrow[from=2-3, to=2-2]
+	\arrow[curve={height=-6pt}, from=3-2, to=1-1]
+	\arrow[curve={height=6pt}, from=2-3, to=1-1]
+	\arrow["{\exists!}"', dashed, from=2-2, to=1-1]
+\end{tikzcd}\]
+That is, given two $R$-algebras $A$ and $B$ and $T$ a morphism $A \otimes_R B \to T$
+is the same as $R$-algebra morphisms $A \to T$, $B \to T$ such that everything
+commutes with the structure morphisms from $R$.
+
+Now back to the fiber. We find 
+\begin{equation*}
+    \spec(f)^{-1}(A \to k(\fp)) = \{[g: B \to K] \mid g \circ f \sim (A \to k(\fp))\}
+\end{equation*}
+and the set on the right is exactly given by the set of morphisms $g$ such that
+there are commutative squares
+\[
+\begin{tikzcd}[ampersand replacement=\&]
+	B \& K \\
+	A \& {k(\fp)}
+	\arrow["f", from=2-1, to=1-1]
+	\arrow[from=2-1, to=2-2]
+	\arrow["g"', from=1-1, to=1-2]
+	\arrow[from=2-2, to=1-2]
+\end{tikzcd}
+\]
+up to equivalence, which is the same as $\spec(B \otimes_A k(\fp))$ by the 
+universal property of the tensor product.
+
+\end{enumerate}
+
+
+\exercise{3}
+Let $m, n \geq 1$ and let $\zeta_m = \ec^{2 \pi \ic / m} \in \C$ be a primitive
+$m$-th root of unity. Set $G \coloneqq \langle \zeta_m \rangle \subset \C^\times$. 
+We let $G$ act on $A \coloneqq \C[T_1, \dots, T_n]$ via $(g, f(T_1, \dots, T_n))
+\mapsto g \cdot f \coloneqq f(gT_1, \dots, gT_n)$. 
+\begin{enumerate}
+    \item Determine the ring of invariante $A^G \coloneqq \{f \in A \mid 
+        g \cdot f = f \text{ for all } g \in G\}$.
+    \item Set $m = n = 2$. Find a presentation $A^G \cong \C[X_1, \dots, X_k]
+        /(h_1, \dots, h_l)$. 
+\end{enumerate}
+
+\textbf{Solution.}
+\begin{enumerate}
+    \item We simply write down what happens. Let $f = \sum_{\mathbf i = (i_1, \dots, i_n) \in \N^n} a_{\mathbf i}T^{\mathbf i} \in \C[T_1, \dots, T_N]$. Now applying
+        $\zeta_m$ gives 
+        \begin{equation*}
+            \zeta_m f = \sum_{k = 0}^\infty \zeta_m^{k}
+            \sum_{\abs{\mathbf i}= k} a_{\mathbf i}T^{\mathbf i},
+        \end{equation*}
+        where $\abs{\mathbf i} = \sum_{j=1}^n i_j$. Now it is easy to see that 
+        $\zeta_m f = f$ if and only if the only $a_{\mathbf i} = 0$ 
+        whenever $m \nmid \abs {\mathbf i}$. 
+    \item By the above, we find that $A^G = \C[T_1^2, T_1T_2, T_2^2]$. 
+        This is also given by $\C[X,Y,Z]/(Y^2 - XZ) \eqqcolon B$. To see 
+        that $A^G \cong B$, look at 
+        $\C[X,Y,Z] \to \C[T_1, T_2]$, $X \mapsto T_1^2, Y \mapsto T_1T_2, 
+        Z \mapsto T_2^2$. The kernel of this morphism contains
+        $(Y^2 - XZ)$. Also, the image, $A^G$, has Krull-dimension at least $2$, 
+        as we have the chain of prime ideals $0 \subset (T_1^2, T_1T_2)
+        \subset (T_1^2, T_1T_2, T_2^2)$. By Krull's PID theorem, the dimension
+        of $\C[X,Y,Z]/(Y^2-XZ)$ is two. Hence the kernel is generated by 
+        $Y^2-XZ$, as any other generator would decrease dimension even more.
+\end{enumerate}
+
+
+\exercise{4}
+Let $A$ be a ring and $M$ be a finitely generated $A$-module. Let $n \geq 1$
+and let $f: A^n \to M$ be a surjection. Show that $K \coloneqq \ker(f)$
+is finitely generated.
+
+\textbf{Solution.}
+As $M$ is finitely generated, there is a short exact sequence 
+$0 \to Q \to A^m \to M \to 0$ with $Q$ finitely generated. 
+Our situation is now the following.
+\[\begin{tikzcd}[ampersand replacement=\&]
+	0 \& Q \& {A^m} \& M \& 0 \\
+	0 \& K \& {A^n} \& M \& 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["g", from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow["f", from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow["\id"{description}, from=1-4, to=2-4]
+	\arrow[from=2-2, to=2-3]
+	\arrow["{\exists \alpha?}"{description}, dashed, from=1-3, to=2-3]
+	\arrow["{\exists \beta?}"{description}, dashed, from=1-2, to=2-2]
+\end{tikzcd} \]
+We want to construct morphisms $\alpha$ and $\beta$ making the diagram above commute,
+in the hope of being able to apply the snake lemma then. 
+First, we construct $\alpha$. It suffices to find values for $\alpha(e_i)$.
+We simply choose any $\alpha(e_i) \in f^{-1}(g(e_i))$. Now by the universal
+property of kernels, we also get $\beta$. We want to show that $K$ is 
+finitely generated. The snake lemma gives a short exact sequence
+\begin{equation*}
+    0 \to \coker \beta \to \coker \alpha \to 0.
+\end{equation*}
+Hence, $\coker \beta \cong \coker \alpha \cong A^n / \img(\alpha)$ is 
+finitely generated. We also have the short exact sequence
+\begin{equation*}
+    0 \to \img(\beta) \to K \to \coker(\beta) \to 0.
+\end{equation*}
+As $\img(\beta)$ is finitely generated, we obtain that $K$ is finitely generated.
+Indeed, let $(f_1, \dots, f_n)$ be generators of $\img(\beta)$ and 
+$(g_1, \dots, g_m)$ be lifts of generators of $\coker(\beta) = K/\img(\beta)$. 
+Now we have a diagram
+\[\begin{tikzcd}[ampersand replacement=\&]
+	0 \& {A^n} \& {A^{m+n}} \& {A^m} \& 0 \\
+	0 \& {\img(\beta)} \& K \& {\coker(\beta)} \& 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow["{e_j \mapsto g_j}"{description}, from=1-4, to=2-4]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=1-3, to=2-3]
+	\arrow["{e_i \mapsto f_i}"{description}, from=1-2, to=2-2]
+\end{tikzcd}\]
+from where we can use the snake lemma agin.
+
+
+\contactend
+
+\end{document}

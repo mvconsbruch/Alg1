@@ -12,6 +12,7 @@ Warning: These are non-official, there might be errors. If you find errors, feel
 * [Sheet 6](Sheet06/Sheet06.pdf) More on tensor products. 
 * [Sheet 7](Sheet07/Sheet07.pdf) Hom-Tensor adjunction and other tensor identites, Support of modules, localization and Hom, Example for a non-flat ideal.
 * [Sheet 8](Sheet08/Sheet08.pdf) Finitely presented algebras, integral extensions, finite morphisms have finite fibers on spectra, no proof of the 5-Lemma.
+* [Sheet 9](Sheet09/Sheet09.pdf) Random number theory exercies (we like those), more fibers on spectra (and useful formulas and ideas how to think about them), invariants of a group action, finitely presentedness does not depent on the presentation.
 
 
 ###### Max von Consbruch, email: s6mavonc(at)uni-bonn(dot)de
