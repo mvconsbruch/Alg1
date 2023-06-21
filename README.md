@@ -1,4 +1,4 @@
-#Exercise Sessions in Algebra 1
+# Exercise Sessions in Algebra 1
 ##### Tuesdays 10-12 (Room 0.007), Summer term 2023, Uni Bonn
 
 ## Solutions to the exercise sheets
