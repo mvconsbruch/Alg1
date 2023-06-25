@@ -22,7 +22,7 @@ by Hilbert's Nullstellensatz. We have the morphism
 \begin{equation*}
     A/f^{-1}(\fm) \to B/\fm = K,
 \end{equation*}
-which is necessarily injective, hence $A/f^{-1}(\fm)$ is isomorphic to some 
+which is readily seen to be injective. Hence $A/f^{-1}(\fm)$ is isomorphic to some 
 sub-$k$-algebra of a finite field extension of $k$. But now it is a finite
 $k$-algebra, in particular a field itself. This shows that $f^{-1}(\fm)$ 
 is maximal.
@@ -72,12 +72,12 @@ of all maximal ideals containing it.
 
 \textbf{Solution.}
 
-\textit{1.} There is not much to do. If $A$ is Jacobson, then every prime 
+\textsc{1.} There is not much to do. If $A$ is Jacobson, then every prime 
 ideal is the intersection containing it, hence for every $a \not \in \fp$ there
 is some $\fm \supset \fp$ with $a \not \in \fm$. The other direction is also readily
 verified.
 
-\textit{2.} First of all, note that if $\fm \subset B$ is maximal, $f^{-1}(\fm)
+\textsc{2.} First of all, note that if $\fm \subset B$ is maximal, $f^{-1}(\fm)
 \subset A$ is maximal as well. This follows directly from the going-up property
 of integral extension. 
 
@@ -87,6 +87,13 @@ with $f^{-1}(\fq) = \fp$. As $B$ is Jacobson we have $\fq = \bigcap_{\fm \supset
 $$\fp = f^{-1}(\fq) = \bigcap_{\fm \supset \fq} f^{-1}(\fm) = 
 \bigcap_{f^{-1}(\fm) \supset \fp} f^{-1}(\fm).$$
 
+\textit{Alternative proof.} We can also use part 1. Let 
+$\fp \in \spec(A)$, $a \in A$ be any elements. By the lying-over property for
+integral extensions we find some prime $\fq \in \spec(B)$ with
+$\fq \cap A = \fp$. Now there is some maximal ideal $\fm \in \spec(B)$ 
+with $\fq \subset \fm$ and $a \not \in \fm$. But now let $\fm' = A \cap \fm$.
+This is a maximal ideal containing $\fp$, not containing $a$. We are done with 
+part 1.
 
 
 \exercise{4}
