@@ -158,18 +158,18 @@ Given a short exact seqeunce of $A$-modules
 \begin{equation*}
     0 \to M' \to M \to M'' \to 0
 \end{equation*}
-and another $A$-module $N$, there should be certain functors $\Tor^i_A(N,-)$
+and another $A$-module $N$, there should be certain functors $\Tor_i^A(N,-)$
 which capture the failure of left-exactness in that they fit into a long exact
 sequence
 \begin{multline*}
-    \dots \Tor^2(N, M'') \to \Tor^1(N,M') \to \Tor^1(N,M) \to \Tor^1(N,M'') \\ 
+    \dots \Tor_2(N, M'') \to \Tor_1(N,M') \to \Tor_1(N,M) \to \Tor_1(N,M'') \\ 
     \to N \otimes_A M' \to N \otimes_A M \to N \otimes_A M'' \to 0.
 \end{multline*}
-One can show that $\Tor^i_A$ is symmetric, i.e., $\Tor^i(M,N) = \Tor^i(N,M)$. 
-Using Tor, one finds that $M$ being flat is the same as $\Tor^i(M, N) = 0$
+One can show that $\Tor_i^A$ is symmetric, i.e., $\Tor_i(M,N) = \Tor_i(N,M)$. 
+Using Tor, one finds that $M$ being flat is the same as $\Tor_i(M, N) = 0$
 for all $i > 0$. This should make sense: If we have any exact sequence 
 ending in $N$, then thensoring with $M$ shouldn't make this not-exact, so 
-$\Tor^1(M,N) = 0$. Knowing this, we see that any sequence ending in $M$ is
+$\Tor_1(M,N) = 0$. Knowing this, we see that any sequence ending in $M$ is
 universally exact, i.e., still exact if we tensor it with any other $A$-module 
 $N$. In particular, exactness of the sequence
 \begin{equation*}
@@ -177,7 +177,7 @@ $N$. In particular, exactness of the sequence
 \end{equation*}
 implies exactness of the sequence
 \begin{equation*}
-    \Tor^1_A(M, A/\fm) = 0 \to K/ \fm K \to (A/\fm A)^n \to M/\fm M \to 0.
+    \Tor_1^A(M, A/\fm) = 0 \to K/ \fm K \to (A/\fm A)^n \to M/\fm M \to 0.
 \end{equation*}
 
 
