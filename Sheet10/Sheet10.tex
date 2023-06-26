@@ -111,18 +111,18 @@ right-exactness of tensoring with $A/\fm = k$. By Nakayama's Lemma, any choice o
 generators of $M/\fm$ lifts to generators of $M$. Hence we can construct a surjective
 morphism of $A$-modules $A^n \to M$ which is an isomorphism up to tensoring
 with $k$. Note that $\fm A \inj A$, so after tensoring with $M$
-we find $\fm M \inj M$. Also, tensoring the exact sequence
+we find $\fm \otimes_A M \inj M$. Also, tensoring the exact sequence
 \begin{equation*}
     0 \to K \to A^n \to M \to 0
 \end{equation*}
 with $\fm$ yields the exact sequence
 \begin{equation*}
-    \fm K \to (A \fm)^n \to \fm M \to 0.
+    \fm \otimes_A K \to \fm^n \to \fm \otimes_A M \to 0.
 \end{equation*}
 All information up to now is encoded in the following diagram with exact rows.
 \begin{equation*}
 \begin{tikzcd}[ampersand replacement=\&]
-	\& {\fm K} \& {(\fm A)^n} \& {\fm M} \& 0 \\
+	\& {\fm \otimes K} \& {\fm^n} \& {\fm \otimes_A M} \& 0 \\
 	0 \& K \& {A^n} \& M \& 0 \\
 	0 \& 0 \& {(A/\fm)^n} \& {M/\fm M} \& 0
 	\arrow[from=3-1, to=3-2]
@@ -158,7 +158,7 @@ Given a short exact seqeunce of $A$-modules
 \begin{equation*}
     0 \to M' \to M \to M'' \to 0
 \end{equation*}
-and another $A$-module $N$, there should be certain functors $\Tor_i^A(N,-)$
+and another $A$-module $N$, there are certain functors $\Tor_i^A(N,-)$
 which capture the failure of left-exactness in that they fit into a long exact
 sequence
 \begin{multline*}
