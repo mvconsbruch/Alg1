@@ -1,6 +1,10 @@
 # Exercise Sessions in Algebra 1
 ##### Tuesdays 10-12 (Room 0.007), Summer term 2023, Uni Bonn
 
+## News
+03.07.2023: I am sick and the exercise session tomorrow is transferred to zoom. You can join using the [invitational link](https://uni-bonn.zoom.us/j/61231073646?pwd=VWNkNzN3MjRwMjM5M2hOTUE1ejJIUT09).
+
+
 ## Solutions to the exercise sheets
 Warning: These are non-official, there might be errors. If you find errors, feel free to write me :)
 
