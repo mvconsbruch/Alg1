@@ -33,9 +33,9 @@ square is co-cartesian (i.e., in every square, the top-right is isomorphic to
 the tensor product along the corners)
 \begin{equation*}
 \begin{tikzcd}[ampersand replacement=\&]
-	B \& {k[x_1, \dots, x_n] \otimes_k B} \& {A \otimes_k B} \\
-	{k[y_1, \dots, y_m]} \& {k[x_1, \dots, x_n, y_1, \dots, y_m]} \& {A \otimes_k k[y_1, \dots, y_m]} \\
-	k \& {k[x_1, \dots, x_n]} \& A
+	A \& {A \otimes_k k[y_1, \dots, y_n] } \& {A \otimes_k B} \\
+    {k[x_1, \dots, x_m]} \& {k[x_1, \dots, x_n, y_1, \dots, y_m]} \& {k[x_1, \dots, x_n] \otimes_k B} \\
+	k \& {k[y_1, \dots, y_n]} \& B
 	\arrow[from=3-2, to=2-2]
 	\arrow[from=3-1, to=3-2]
 	\arrow[from=3-1, to=2-1]
@@ -43,7 +43,7 @@ the tensor product along the corners)
 	\arrow["{\text{integral}}"', hook, from=3-2, to=3-3]
 	\arrow[from=3-3, to=2-3]
 	\arrow["{\therefore \text{integral}}"', from=2-2, to=2-3]
-	\arrow["{\text{integral}}"', from=2-1, to=1-1]
+	\arrow["{\text{integral}}"',hook, from=2-1, to=1-1]
 	\arrow["{\therefore \text{integral}}"', from=2-2, to=1-2]
 	\arrow[from=1-1, to=1-2]
 	\arrow["{\therefore \text{integral}}"', from=1-2, to=1-3]
