@@ -1,10 +1,6 @@
 # Exercise Sessions in Algebra 1
 ##### Tuesdays 10-12 (Room 0.007), Summer term 2023, Uni Bonn
 
-## News
-03.07.2023: I am sick and the exercise session tomorrow is transferred to zoom. You can join using the [invitational link](https://uni-bonn.zoom.us/j/61231073646?pwd=VWNkNzN3MjRwMjM5M2hOTUE1ejJIUT09).
-
-
 ## Solutions to the exercise sheets
 Warning: These are non-official, there might be errors. If you find errors, feel free to write me :)
 
@@ -19,6 +15,8 @@ Warning: These are non-official, there might be errors. If you find errors, feel
 * [Sheet 9](Sheet09/Sheet09.pdf) Random number theory exercise, more fibers on spectra (and remarks on how to calculate and think about them), invariants of a group action, finitely presentedness does not depent on the choice of generators.
 * [Sheet 10](Sheet10/Sheet10.pdf) something something finite $k$-algebras, algebraic subsets, Jacobson rings, Finitely presented over local rings implies free (also some Tor). 
 * [Sheet 11](Sheet11/Sheet11.pdf) Krull dimension of tensor products of $k$-algebras,normalization of the cusp, minimal ideals and irreducible components.
+* [Sheet 12](Sheet12/Sheet12.pdf) Integrality of invariants under finite group action, normality of the quadratic cone, Galois actions on the ring of integers of number fields, normalization of the nodal curve.
 
+Thank you for the fun exercise sessions (I learned a lot) and good luck with the exams!
 
 ###### Max von Consbruch, email: s6mavonc(at)uni-bonn(dot)de
