@@ -1,0 +1,113 @@
+\documentclass[a4paper,11pt]{article}
+\pagenumbering{arabic}
+\usepackage{../environment}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{../quiver}
+
+\begin{document}
+
+\begin{center}
+    \huge{Solutions to Sheet 12}
+\end{center}
+
+\exercise{1}
+Let $A$ be a ring and let $G$ be a finite group acting on $A$ by ring automorphisms.
+Let $A^G$ be the ring of invariants of $G$ in $A$.
+\begin{enumerate}
+    \item Show that $A$ is integral over $A^G$.
+    \item Assume that $A$ is a domain with quotient field $K$. Show that $K^G = 
+        \Quot(A^G)$. 
+\end{enumerate}
+\textbf{Solution.}
+\begin{enumerate}
+    \item Let $x \in A$ be any element. Then 
+        \begin{equation*}
+            P_x(T) = \prod_{g \in G}(T-g(x))
+        \end{equation*}
+        is a monic polynimial with coefficients invariant under $G$ (by symmetry). 
+        As $P_x(x) = 0$, $x$ is integral over $A^G$, and we are done.
+    \item $G$ acts on $K$ via $g (\frac xy) = \frac{g.x}{g.y}$. One readily 
+        verifies $\Quot(A^G) \subseteq K^G$. For the other inclusion, assume 
+        $\frac xy \in K^G$. Now we find for any $g \in G$
+        \begin{equation*}
+            \frac {gx}{gy} = \frac {x\prod_{\id \neq h \in G} h(g(y))}{\prod_{h
+                \in G} h(g(y))} = \frac {x \prod_{g \neq h \in G}
+                h(y)}{\prod_{h \in G} h(y)} = \frac{x}{gy}.
+        \end{equation*}
+        This implies $x = gx$. After taking inverses, we also find 
+        $y = gy$, and we are done.
+\end{enumerate}
+
+\exercise{2}
+\begin{enumerate}
+    \item Let $A$ be a normal domain with quotient field $K$ and let $G$ be a
+        finite group acting on $A$ by ring automorphisms. Show that $A^G$ is
+        normal.
+    \item Let $k$ be a field of characteristic $\neq 2$. Show that
+        $k[x,y,z]/(z^2 - xy)$ is normal. 
+\end{enumerate}
+
+\textbf{Solution.}
+\begin{enumerate}
+    \item This is just collecting what we did in exercise 1. $A$ is algebraically
+        closed in its quotient field $K$. Also, $A$ is integral over $A^G$ and
+        $K$ is integral over $K^G = \Quot(A^G)$. But now $K$ is integral over
+        $A^G$, in particular $K^G \subseteq K$ is integral over $A^G$. 
+
+    \item We have $k[x,y,z]/(z^2-xy) \cong k[x^2, xy, y^2] = k[x,y]^G$,
+        where $G = \{\pm 1\}$ acts via 
+        $$(-1).f(x,y) = f(-x,-y).$$
+        Now we are in the situation of part 1, and as $k[x,y]$ is normal, we are 
+        done.
+\end{enumerate}
+
+\exercise{3}
+Let $L/K$ be a finite Galois extension of number fields with Galois group $G$. 
+Show that $\cO_L$ is stable under action of $G$ and that $\cO_L^G = \cO_K$. 
+
+\textbf{Solution.} To show that $G$ is invariant under the action of $G$, let
+$x \in \cO_L$ be an element with $f(x) = 0$, where $f \in \cO_K[T]$ is 
+monic and irreducible. Let $\sigma \in \Gal(L/K)$. Write $f^\sigma$ for the 
+polynomial that arises when applying sigma to the coefficients of 
+$f$. Now $f^\sigma (\sigma x) = \sigma(f(x)) = 0.$ (I just realized we have
+$f^\sigma = f$. Whatever.)
+
+We now show the second statement. By Galois theory, we know that 
+$L^G = K$. As $\cO_L \subseteq L$ this shows 
+$\cO_L^G = \cO_L \cap L^G$. By definition, $\cO_L$ is the integral closure of
+$\cO_K$ in $\cO_L$. This directly shows $\cO_L^G \supseteq \cO_K$. The other 
+direction follows because every element in $\cO_L \cap K$ is integral over 
+$\cO_K$, which (by the definition of the integral closure) implies that
+$\cO_L \cap K \subseteq \cO_K$. 
+
+\exercise{4}
+Let $k$ be a field and let $A \coloneqq k[x,y]/(y^2-x^3-x^2)$. 
+\begin{enumerate}
+    \item Show that $A$ is a domain.
+    \item Show that $t = y/x \in \Quot(A)$ does not lie in $A$.
+    \item Show that $t$ is integral over $A$.
+    \item Show that $\Quot(A) = k(t)$ and that $k[t] \subseteq \Quot(A)$ is 
+        the normalization of $A$. 
+\end{enumerate}
+\textbf{Solution.}
+\begin{enumerate}
+    \item We have 
+        $$k(x)[y]/(y^2 - x^2(x+1)) \cong k(x)[y]/((y/x)^2 - (x+1)),$$
+        and this is a quadratic field extension. In particular, $(y^2 - x^3 - x^2)$
+        is irreducible in $k(x)[y]$, hence also irreducible in $k[x,y]$. 
+    \item Suppose $x/y \in A$. Now we have $(x,y) = (x)$. But in $k[x,y]/(y^2 -
+        x^3 -x^2)$, we have $y \not \in (x)$.  
+    \item We have $t^2 = \frac{y^2}{x^2} = x + 1 \in A$.
+    \item What does this even mean?! The normalization is simply the integral closure
+        of $A$ in $\Quot(A)$. First, note $k(t) \subseteq \Quot(A)$ because 
+        $t \in \Quot(A)$. For the reverse statement, note that the calculation 
+        in part 1 shows that 
+        $$\Quot(A) \subseteq k(x)[y]/(y^2 - x^3- x^2) = k(x)[t]/(t^2 - x -1)=k(t).$$
+        Let $N \subseteq \Quot(A)$ denote the normalization of $A$. We have 
+        $N \supseteq k[t]$ because $t$ is integral over $A$, and $N \subseteq k[t]$
+        because $k[t]$ is integrally closed in $k(t) = \Quot(A)$. 
+\end{enumerate}
+
+\contactend
+\end{document}
