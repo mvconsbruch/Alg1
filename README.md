@@ -17,6 +17,8 @@ Warning: These are non-official, there might be errors. If you find errors, feel
 * [Sheet 11](Sheet11/Sheet11.pdf) Krull dimension of tensor products of $k$-algebras,normalization of the cusp, minimal ideals and irreducible components.
 * [Sheet 12](Sheet12/Sheet12.pdf) Integrality of invariants under finite group action, normality of the quadratic cone, Galois actions on the ring of integers of number fields, normalization of the nodal curve.
 
+[Here](./allsheets.pdf) are all the solutions in a single file.
+
 
 
 Thank you for the fun exercise sessions, I learned a lot. And good luck with the exams!
