@@ -31,12 +31,13 @@ Let $A^G$ be the ring of invariants of $G$ in $A$.
         verifies $\Quot(A^G) \subseteq K^G$. For the other inclusion, assume 
         $\frac xy \in K^G$. Now we can write
         \begin{equation*}
-            \frac {x}{y} = \frac {x\prod_{\id \neq h \in G} h(g(y))}{\prod_{h
-                \in G} h(g(y))} = \frac {x \prod_{g \neq h \in G}
-                h(y)}{\prod_{h \in G} h(y)} = \frac{x}{gy}.
+            \frac {x}{y} = \frac {x\prod_{\id \neq h \in G} h(y)}{\prod_{h
+                \in G} h(y)} = \frac {x \prod_{\id \neq h \in G}
+                h(y)}{\prod_{h \in G} g(h(y))} = \frac{x}{gy}.
         \end{equation*}
-        This implies $x = gx$. After taking inverses, we also find 
-        $y = gy$, and we are done.
+        In the second equality we used that the denominator is $G$-envariant.
+        This implies $y = gy$. After taking inverses, we also find 
+        $x = gx$, and we are done.
 \end{enumerate}
 
 \exercise{2}
