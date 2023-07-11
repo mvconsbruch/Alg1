@@ -32,12 +32,15 @@ Let $A^G$ be the ring of invariants of $G$ in $A$.
         $\frac xy \in K^G$. Now we can write
         \begin{equation*}
             \frac {x}{y} = \frac {x\prod_{\id \neq h \in G} h(y)}{\prod_{h
-                \in G} h(y)} = \frac {x \prod_{\id \neq h \in G}
-                h(y)}{\prod_{h \in G} g(h(y))} = \frac{x}{gy}.
+                \in G} h(y)}.
         \end{equation*}
-        In the second equality we used that the denominator is $G$-envariant.
-        This implies $y = gy$. After taking inverses, we also find 
-        $x = gx$, and we are done.
+        The denominator is $G$-invariant. But now the denumerator is as well, as
+        \begin{equation*}
+            x \prod_{\id \neq h \in G} h(y) = \frac xy \prod_{h \in G} h(y)
+        \end{equation*}
+        is a product of two $G$-invariant elements. Hence $\frac xy$ can be expressed
+        as the quotient of two $G$-invariant objects. I struggeled way too much with this
+        exercise.
 \end{enumerate}
 
 \exercise{2}
